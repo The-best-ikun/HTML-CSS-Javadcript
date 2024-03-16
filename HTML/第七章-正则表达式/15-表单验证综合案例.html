@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>表单验证</title>
+        <style>
+            span{
+                color:red;
+                font-weight:bold;
+                display:none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form action="#" method="get">
+            用&nbsp;&nbsp;户&nbsp;&nbsp;名
+            <!-- 这个空格总有一股土味 -->
+            <input type="text" id="username" name="username"; class="regex">
+            <span class="error">用户名在6-15位</span>
+            <br>
+            密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码
+            <input type="password" id="pwd" name="pwd" class="regex">
+            <span class="error"></span>
+            <br>
+            确&nbsp;认&nbsp;密&nbsp;&nbsp;码
+            <input type="password" id="c_pwd" name="c_pwd" class="regex">
+            <span class="error"></span>
+            <br>
+            手&nbsp;&nbsp;机&nbsp;&nbsp;号
+            <input type="text" id="mobile" name="mobile" class="regex">
+            <span class="error"></span>
+            <br>
+            邮&nbsp;&nbsp;件&nbsp;&nbsp;箱
+            <input type="text" id="email" name="email" class="regex">
+            <span class="error"></span>
+            <br>
+            <input type="submit" id="sub" value="注册">
+        </form>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var mybtn=document.getElementById("sub");
+            var myRegexs=document.getElementsByClassName("regex");
+            var myErrors=document.getElementsByClassName("error");
+
+            for(i=0;i<myRegexs.length;i++){
+                myRegexs[i].index=i;//这步还没搞懂
+                myRegexs[i].onblur=function(){//失去焦点时处理的事
+                    switch(this.index){
+                        case 0:var pattern=/^\w{6,15}$/;
+                        regError='用户名必须用数字下划线或者字母且必须在6到15位'
+                        spaceError="用户名不能为空";
+                        testResult(this,pattern,this.index,spaceError,regError);
+                        break;
+
+                        case 1:var pattern=/^\w{6,15}$/;
+                        regError="密码必须在6到15位";
+                        spaceError="密码不能为空";
+                        testResult(this,pattern,this.index,spaceError,regError);
+                        break;
+
+                        case 2:
+                            if(myRegexs[2].value==""){
+                                myErrors[2].style.display="inline";//改变CSS样式
+                                myErrors[2].innerHTML="确认密码不能为空！";
+                                myRegexs[1].data=1;//设置验证数据为1，表示没通过
+                            }else if(myRegexs[1].value!=myRegexs[2].value){
+                                myErrors[2].style.display="inline";//改变CSS样式
+                                myErrors[2].innerHTML="两次密码值不一致！";
+                                myRegexs[1].data=1;//设置验证数据为1，表示没通过
+                            }
+                        break;
+
+                        case 3:var pattern=/^1[3578]\d{9}$/;
+                        regError="手机号必须是13 15 17 18 开头的";
+                        spaceError="手机号不能为空";
+                        testResult(this,pattern,this.index,spaceError,regError);
+                        break;
+
+                        case 4:var pattern=/^\w+@(\w+[.])*\w+$/;
+                        regError="邮件箱格式有误";
+                        spaceError="邮件箱号不能为空";
+                        testResult(this,pattern,this.index,spaceError,regError);
+                        break;
+                    }
+
+                }
+            }
+
+            function testResult(object,pattern,index,spaceError,regError){
+            var value=object.value;
+            var result=pattern.test(value);
+            if(value==""){
+                myErrors[index].style.display="inline";
+                myErrors[index].innerHTML=spaceError;
+                object.data=1;//数据验证，没有通过
+            }else if(result){
+                myErrors[index].style.display="none";
+                object.data=0;//数据验证，通过
+
+            }else{
+                myErrors[index].style.display="inline";
+                myErrors[index].innerHTML=regError;
+                object.data=1;//数据验证，没有通过
+            }
+        }
+
+        mybtn.onclick=function(){
+            var total=0;
+            for(i=0;i<myRegexs.length;i++){
+                myRegexs[i].onblur();//激活表单每一个失去焦点
+                total+=myRegexs[i].data;
+
+            }
+            if(total>0){
+                alert("数据填写有误，请检查输入格式");
+                return false;
+
+            }else{
+                alert("注册成功");
+                return true;
+            }
+
+        }
+        }
+
+        
+    </script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>定位层叠次序</title>
+        <style>
+        div {
+            width:100px;
+            height:100px;
+            position:absolute;
+            top:0px;
+            left:0px;
+            background:yellow;
+        }
+        .two{
+            top:20px;
+            left:20px;
+            background-color: blueviolet;
+        }
+        .three{
+            top:40px;
+            left:40px;
+            background:powderblue;
+        }
+        </style>
+
+
+    <body>
+        <!-- 使用绝对定位，z-index才能起作用,数越大，离用户越近-->
+        <!-- 在没有设置z-index时，默认按文档先后顺序显现 -->
+        <div class="one">1</div>
+        <div class="two">2</div>
+        <div class="three">3</div>
+    </body>
+</html>

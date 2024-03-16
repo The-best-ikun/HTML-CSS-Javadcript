@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>伪类案例</title>
+        <style>
+            /* 未访问 */
+            a:link{
+                color:chocolate;
+            }
+            /* 已访问 */
+            a:visited{
+                color: aquamarine;
+            }
+            /* 单击时 */
+            a:active{
+                color:blue;
+            }
+            input:focus{
+                background-color: blueviolet;
+            }
+            p:last-child{
+                font-size:48px;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <p>
+            <b><a href="http://www.baidu.com" target="_blank">百度</a>  </b>
+        </p>
+        <b>注意</b>
+        a:hover必须在a:link和a:visited之后，严格按顺序执行，才能看到效果
+        <p><b>注意</b>a:active 必须在a:hover之后</p>
+        <p>可以使用first-letter伪元素来向文本的首字母设置特殊样式</p>
+        First name:<input type="text" name="fname"/>
+        <p>字体将放大</p>
+
+    </body>
+</html>

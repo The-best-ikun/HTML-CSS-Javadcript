@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>match方法</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var url='http://www.baidu.com?a=1&b=2&c=3'
+            var pattern=/([^?&=]+)=([^?&=])*/;
+            /*言简意赅，这就是找url参数部分夹着等于号的参数的
+            ([^?&=]+)：
+            []：字符集，匹配括号内列出的任何字符。
+            ^?&=：在字符集内部，^ 是第一个字符，表示“非”的意思，所以 [^?&=] 匹配任何不是 ?、& 或 = 的字符。
+            +：表示匹配前面的字符或组一次或多次。
+            因此，([^?&=]+) 匹配一个或多个连续的、不是 ?、& 或 = 的字符。
+            ()：捕获括号，用于提取匹配的部分。在这个正则表达式中，它会捕获参数名。
+            =：直接匹配等号字符 =。
+            ([^?&=]*)：
+            与上面类似，([^?&=]) 匹配任何不是 ?、& 或 = 的单个字符。*/
+            strArr=url.match(pattern);
+            for(i=0;i<strArr.length;i++){
+                document.write(strArr[i]+"<br>");
+            }
+
+        }
+    </script>
+</html>

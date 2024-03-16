@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>getElementByName</title>
+    <body>
+        <form action="#" method="post">
+            用户名：<input type="text" name="userName">
+            <br/>
+            爱好：
+            <br/>
+            <input type="checkbox"  name=hobbies  value="sing">唱
+            <input type="checkbox" name=hobbies  value="dance">跳
+            <input type="checkbox" name=hobbies  value="rap">rap
+            <input type="checkbox" name=hobbies  value="basketball">篮球
+        </form>
+        <div id="disp"></div>
+    </body>
+    <script>
+        window.onload=function(){
+            // 注意返回的是数组就行
+            var myName=document.getElementsByName("hobbies");
+            var myDisp=document.getElementById("disp");
+            myDisp.innerHTML="选中的复选个数是"+myName.length+"<br>";
+            myDisp.innerHTML+="第二个复选框的value值"+myName[1].value;
+            myDisp.innerHTML+="第三个复选框的选中状态"+myName[2].checked;
+            var myRap=myName[2];
+            myRap.onclick=function(){
+                myDisp.innerHTML+="第三个复选框的选中状态"+myName[2].checked;
+            }
+        }
+
+        
+    </script>
+</html>

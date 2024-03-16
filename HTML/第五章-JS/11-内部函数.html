@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>内部函数</title>
+
+
+    <body>
+        <pre>
+            内部函数，指的是JS自带的一些常用函数，且他们并不归属于对象
+            如
+            isNaN
+            prompt
+            alert
+        </pre>
+
+    </body>
+    <script>
+        window.onload=function(){
+            str=prompt("请输入一个数字类型数据：");
+            if(isNaN(str)){
+                document.write("您输入的数据类型不对")//是覆盖，不是追加内容
+            }else{
+                document.write("您输入的数据类型正确")
+            }
+        }
+    </script>
+</html>

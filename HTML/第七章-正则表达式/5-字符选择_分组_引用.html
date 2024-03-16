@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>字符选择、分组、引用</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var ipArr=new Array("98.a.3.3","192.168.1.1","172.268.3.4","10-1-2-1");
+            var pattern=/^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9]{2}|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/;
+            document.write("<h1>地址列表如下</h1>");
+            for(i=0;i<ipArr.length;i++){
+                document.write(ipArr[i]+"<br/>");
+            }
+            document.write("<h1>符合条件的地址列表如下</h1>");
+            for(i=0;i<ipArr.length;i++){
+                if(pattern.test(ipArr[i])){
+                    document.write(ipArr[i]+"<br/>");
+                }
+            }
+        }
+    </script>
+</html>

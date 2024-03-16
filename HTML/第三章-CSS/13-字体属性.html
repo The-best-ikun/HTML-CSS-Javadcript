@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>字体属性</title>
+        <style>
+            #fontCSS1{
+                font-family:"Times New Roman",Georgia,Serif;
+                font-size:28px;
+                font-weight:bold;
+            }
+            #fontCSS2{
+                font-family:Arial,Verdana,Sans-serif;
+                font-size:20px;
+                font-style:italic;
+                font-weight:900;
+
+            }
+            #myfont{
+                /* 设置字体为倾斜、加粗、大小为24像素，行高为36像素，字体为arial,sans-serif */
+                font:oblique bold 24px/36px araial,sans-serif;
+                 
+            }
+        </style>
+    </head>
+    <body>
+        <p id="fontCSS1">Hello World</p>
+        <p id="fontCSS2">Hello World</p>
+        <p id="myfont">Hello World</p>
+
+
+        <pre>
+            font 简写属性 把所有针对字体的属性设置在一个声明中
+            font-family 设置字体 字体由多个单词组成时，要加双引号，
+            可以指定多种字体，用逗号分开，浏览器不支持第一种字体时，
+            可以用下一种字体。
+            
+            font-size 设置字体的尺寸 单位是像素
+            font-style Normal为正常 italic为斜体 oblique为倾斜
+            font-weight 字体的粗细 Normal为正常 bold为斜体 bolder为特粗体
+        </pre>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>search方法</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        var pattern=/(\d)(\d)\d\2\1/;
+        var ostr="253212328";
+        var pos=ostr.search(pattern);
+        // 这个方法通常用来表示是否存在相应的匹配，有就返回匹配字符串离开始的偏移位置的整数值，没有就返回-1
+        if(pos==-1){
+            document.write("没有匹配值")
+        }else{
+            var str=ostr.match(pattern);
+            // 注意它除了返回32123，还会返回3,2，所以要用数组索引
+            document.write(str[0]+"<br>");
+           
+        }
+        
+
+    </script>
+</html>

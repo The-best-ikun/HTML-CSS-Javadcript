@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JSON创建对象</title>
+
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var student={
+                studentId:"10111136",
+                username:"张三",
+                tel:{
+                    home:"10086",
+                    mobile:"1008611"
+                },
+                address:[
+                        {city:"武汉" , postcode:"420023"},
+                        {city:"上海" , postcode:"111111"}
+                ],
+                show:function(){
+                    document.write("学号："+this.studentId+'<br/>');
+                    document.write("姓名："+this.username+'<br/>');
+                    document.write("家里电话："+this.tel.home+'<br/>');
+                    document.write("移动电话："+this.tel.mobile+'<br/>');
+                    document.write("老家："+this.address[0].city+'<br/>');
+                    document.write("工作城市："+this.address[1].city+'<br/>');
+                    document.write("老家邮编："+this.address[0].postcode+'<br/>');
+                    document.write("工作城市邮编："+this.address[1].postcode+'<br/>');
+
+                }
+                
+            }
+            student.show();
+        }
+    </script>
+</html>

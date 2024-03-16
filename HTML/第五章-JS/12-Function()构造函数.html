@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Function()构造函数</title>
+
+
+    <body>
+        <pre>
+            Function也是一个类，利用Function的构造函数来创建函数
+            var 函数名 = new Function(参数，函数代码段)
+            参数和函数代码段都需要引号
+            个人觉得这只适合简单函数，不然可读性太差了    
+        </pre>
+    </body>
+    <script>
+        var myFunction=new Function("a","b","return a*b");
+        document.write("Function()构造函数4*3的值"+myFunction(4,3));
+    </script>
+</html>

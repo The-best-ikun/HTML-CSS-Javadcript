@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>水平垂直居中</title>
+        <style>
+            div{
+                width:100px;
+                height:100px;
+                /* 使用绝对定位，此时父元素是body */
+                position: absolute;
+                /* 距离左和上边框50%（父元素宽度的50%） */
+                /* 这里刚开始还有点疑惑，使用left: 50%;和top: 50%;
+                会将元素的左边和顶部边缘移动到其父元素（在这种情况下是body）的中心点。
+                但是，这会导致元素的左上角与其父元素的中心对齐，
+                而不是元素的中心与父元素的中心对齐。 */
+                left:50%;
+                top:50%;
+                /* 所以后面才会用外边距负值去调整 */
+
+
+                /* 左移50像素，上移50像素 */
+                margin-left: -50px;
+                margin-top: -50px;
+                background-color: brown;
+            }
+        </style>
+
+
+    <body>
+        <div></div>
+
+    </body>
+</html>

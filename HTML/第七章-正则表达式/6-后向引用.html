@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>后向引用</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+             var numberArr=["1212","1234","1221","1231"];
+            //  加上小括号后，会自左向右分配组号，所以这里的（\b）组号分别是1,2,3,4
+            // 所以它后面引用了组号，相当于筛选abba或者abab的数字
+             var partern=/(\d)(\d)\2\1|(\d)(\d)\3\4/;
+             document.write("数字列表如下：")
+            for(i=0;i<numberArr.length;i++){
+                document.write(numberArr[i]+"<br/>");
+            }
+            document.write("筛选后数字列表如下：")
+            for(i=0;i<numberArr.length;i++){
+                if(pattern.test(numberArr[i])){
+                    document.write(numberArr[i]+"<br/>");
+                }
+                
+            }
+        }
+    </script>
+</html>

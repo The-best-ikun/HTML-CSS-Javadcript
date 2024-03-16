@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>数组对象</title>
+
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var mycars =new Array();
+            mycars[0]='Audi'
+            mycars[1]='Volvo'
+            mycars[2]='BMW'
+            for(x in mycars.sort()){//数组进行排序
+                document.write(mycars[x]+"<br/>")
+            }
+            document.write("<hr/>")
+            mycars.push("BYD");
+            for(x in mycars.sort()){//数组进行排序
+                document.write(mycars[x]+"<br/>")
+            }
+        }
+
+    </script>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>节点访问属性</title>
+
+
+    <body>
+        <div id="main">
+            <ul id="action">
+                <li>音乐</li>
+                <li>物理</li>
+                <li>语文</li>
+            </ul>
+        </div>
+        <div id="display" style="font-size: 32px; font-weight: bold;"></div>
+
+
+    </body>
+    <!-- <script>因为firstChild节点包括元素节点，文本节点等，需要进行额外判断，否则可能因为换行空格等出现文本节点而不是元素节点
+        var myUl=document.getElementById("action");
+        var myDisplay=document.getElementById("display");
+        myDisplay.innerHTML="UL的第一个子元素节点内容"+myUl.firstChild.innerHTML+"<br/>";
+        myDisplay.innerHTML+="UL的最后一个子元素节点内容"+myUl.lastChild.innerHTML+"<br/>";
+        myDisplay.innerHTML+="UL的第一个子元素的兄弟元素节点内容"+myUl.firstChild.nextSibling.innerHTML+"<br/>";
+        myDisplay.innerHTML+="UL的最后一个子元素的前面的兄弟元素节点内容"+myUl.lastChild.previousSibling.innerHTML+"<br/>";
+        myDisplay.innerHTML+="UL的父元素"+myUl.parentNode.nodeName;
+
+
+    </script> -->
+
+
+    <script>  
+        var myUl = document.getElementById("action");  
+        var myDisplay = document.getElementById("display");  
+          
+        // 获取第一个和最后一个元素子节点  
+        var firstLi = myUl.firstElementChild;  
+        var lastLi = myUl.lastElementChild;  
+          
+        // 设置初始显示内容  
+        myDisplay.innerHTML = "UL的第一个子元素节点内容" + (firstLi ? firstLi.innerHTML : "无") + "<br/>";  
+        myDisplay.innerHTML += "UL的最后一个子元素节点内容" + (lastLi ? lastLi.innerHTML : "无") + "<br/>";  
+          
+        // 获取第一个子元素的下一个兄弟元素节点  
+        var nextSibling = firstLi ? firstLi.nextSibling : null;  
+        while (nextSibling && nextSibling.nodeType !== 1) { // 跳过非元素节点  
+            nextSibling = nextSibling.nextSibling;  
+        }  
+          
+        // 获取最后一个子元素的前一个兄弟元素节点  
+        var previousSibling = lastLi ? lastLi.previousSibling : null;  
+        while (previousSibling && previousSibling.nodeType !== 1) { // 跳过非元素节点  
+            previousSibling = previousSibling.previousSibling;  
+        }  
+          
+        // 设置显示内容  
+        myDisplay.innerHTML += "UL的第一个子元素的兄弟元素节点内容" + (nextSibling ? nextSibling.innerHTML : "无") + "<br/>";  
+        myDisplay.innerHTML += "UL的最后一个子元素的前面的兄弟元素节点内容" + (previousSibling ? previousSibling.innerHTML : "无") + "<br/>";  
+        myDisplay.innerHTML += "UL的父元素" + myUl.parentNode.nodeName;  
+    </script>
+
+</html>

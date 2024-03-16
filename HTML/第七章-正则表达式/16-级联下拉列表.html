@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>级联下拉列表</title>
+    </head>
+        请选择省份：
+        <select id="province" size="1">
+            <option value="0">河南</option>
+            <option value="1">湖北</option>
+            <option value="2">湖南</option>
+        </select>
+        <br>
+        请选择城市：
+        <select id="city" width="200px">
+            
+        </select>
+        <br>
+        <strong>你最后选择的结果是:<span id="result" style="color:red;"></span></strong>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var selectPro="";
+            var proArr=new Array("河南","湖北","湖南");
+            var arr=new Array();
+            arr[0]="郑州,开封,洛阳,安阳,鹤壁,新乡,焦作,濮阳,许昌,漯河";
+            arr[1]="武汉,宜昌.荆州,襄樊,黄石,荆门,黄冈,十堰,恩施,潜江";
+            arr[2]="长沙,常德,株洲,湘潭,衡阳,岳阳,邵阳,益阳,娄底,怀化";
+            var city=document.getElementById("city");
+            var province=document.getElementById("province");
+            //将河南地级市存入数组,其实就是有个默认显示而已
+            var cityArr=arr[0].split(",");
+            // 这个是关键函数
+            initCity(0);
+            function initCity(index){
+                // 将被选择身份的城市字符串拆分成数组
+                var cityArr=arr[index].split(",");
+                for(var i=0;i<cityArr.length;i++){
+                    // 这个以前没见到过，反正会在城市列表下面添加城市选项
+                    city[i]=new Option(cityArr[i],cityArr[i]);
+
+                }
+                //将之前赋值为空的selectPro赋上选择的城市值
+                selectPro=proArr[province.value];
+                // 插入最终结果
+                result.innerHTML=selectPro+"省"+cityArr[0]+"市";
+            }
+            province.onchange=function(){
+                // 省份改变，重新初始化城市列表
+                var index=province.selectedIndex;//这个应该是自带属性，之前也没见到过
+                initCity(index);
+            }
+            city.onchange=function(){
+                // 这里只需要改动结果就行
+                result.innerHTML=selectPro+"省"+city.value+"市";
+            }
+        }
+    </script>
+</html>

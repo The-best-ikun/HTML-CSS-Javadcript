@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>属性选择器</title>
+
+        <style>
+            p[align]{
+                color:red;
+                font-size:48px;
+            }
+            p[align=left]{
+                color:blue;
+                font-size:24px;
+            }
+        </style>
+    </head>
+    <body>
+        <p align="center">Hello world</p>
+        <p align="left">hello world too</p>
+    </body>
+</html>
+
+<!-- 
+[attribute]：这种选择器会选择所有带有指定属性的元素。例如，[title]会选择所有带有title属性的元素。
+[attribute=value]：这种选择器会选择所有带有指定属性且属性值等于指定值的元素。例如，[title="W3School"]会选择所有title属性值等于"W3School"的元素。
+[attribute~=value]：这种选择器会选择元素属性值是一个用空格分隔的值列表，并且其中有一个值等于指定值的元素。
+[attribute^=value]：这种选择器会选择所有带有指定属性，且属性值以指定值开头的元素。例如，a[href^="https"]会选择所有href属性值以"https"开头的<a>元素。
+
+[attribute$=value]：这种选择器会选择所有带有指定属性，且属性值以指定值结尾的元素。例如，a[href$=".pdf"]会选择所有href属性值以".pdf"结尾的<a>元素。
+    
+[attribute*=value]：这种选择器会选择所有带有指定属性，且属性值中包含指定值的元素。例如，a[href*="google"]会选择所有href属性值中包含"google"的<a>元素。 -->

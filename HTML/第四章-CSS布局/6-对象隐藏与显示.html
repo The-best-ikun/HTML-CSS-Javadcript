@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>对象隐藏与显示</title>
+        <style>
+            .c1{
+                background-color: aqua;
+                width: auto;
+                height: 100px;
+            }
+            a{
+                font-family: 微软雅黑;
+                font-style: bold;
+                background-color: beige;
+                float:left;
+                text-align: center;
+                border: 3px red solid;
+                width: 100px;
+                height: 40px;
+            }
+            #setHidden{
+                visibility: hidden;
+            }
+            .c1 ul{
+                list-style: none;
+            }
+        </style>
+
+
+    <body>
+        <!-- 这里也是主要指盒子模型，这个隐藏和display不太一样，
+            它是视觉隐藏，其实浏览器是把它渲染好了的，所以隐藏后它还是会影响布局 -->
+        <div class="c1">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">新闻</a></li>
+                <li><a href="#">体育</a></li>
+                <li><a href="#" id="setHidden">娱乐</a></li>
+                <li><a href="#">科教</a></li>
+
+            </ul>
+        </div>
+
+    </body>
+</html>

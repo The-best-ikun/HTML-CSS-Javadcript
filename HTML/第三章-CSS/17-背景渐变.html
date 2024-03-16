@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>背景渐变</title>
+        <style>
+            #box1{
+                width:100px;
+                height:100px;
+                /* 取圆角百分之五十相当于设为圆 */
+                border-radius: 50%;
+                margin:10px;
+                background:linear-gradient(45deg,red 30%,yellow 70%);
+            }
+            #box2{
+                width:100px;
+                height:100px;
+                /* 取圆角百分之五十相当于设为圆 */
+                border-radius: 50%;
+                margin:10px;
+                background:repeating-radial-gradient(circle,red 30%,yellow 30%,blue 40%);
+            }
+           
+        </style>
+    </head>
+    <body>
+        <pre>
+             线性渐变：
+             background:linear-gradient(direction,color-stop1,color-stop2,...);
+             后面颜色注意协调性
+             重点说direction属性:默认值，从上到下
+                                to right从左到右的渐变
+                                to bottom right 从左上角到右下角的渐变
+                                其他类推
+                                45度的渐变 起点为红色，终点为黄色
+            background:linear-gradient(45deg,red 30%,yellow 70%);
+
+            径向渐变：
+            background:radial-gradient(shape,start-color,...,last-color)
+            可以以椭圆或者圆形渐变
+            circle或者ellipse
+
+            重复径向渐变：
+            background:repeating-radial-gradient(shape,start-color,...,last-color)
+            可以以椭圆或者圆形渐变
+            circle或者ellipse
+        </pre>
+        <div id="box1"></div>
+        <div id="box2"></div>
+        
+    </body>
+</html>

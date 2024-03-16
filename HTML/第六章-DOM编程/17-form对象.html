@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>form对象</title>
+    </head>
+
+    <body>
+        <form name="form1" action="#">
+            文本框1：<input  name="lbCurrent">
+            文本框2：<input  name="lbNext">
+            <h3>单击按钮显示表单信息</h3>
+            <input type="button" id="btn" name="lyd" value="显示表单中的元素名称">
+
+        </form>
+    </body>
+    <script>
+        var btn=document.getElementById("btn");
+        btn.onclick=function(){
+            // 为什么要调用个open函数
+            // 不知道，反正是打开一个空窗口
+            // 然后在新窗口使用document.write写内容
+            // 所以要注意this还是newWin
+            var newWin=window.open("","",height=300,width=350);
+            newWin.document.write("文档中包含"+document.form1.length+"个元素，分别是<br>");
+            newWin.document.write("<ul>");
+            for(i=0;i<document.form1.length;i++){
+                newWin.document.write("<li>"+document.form1.elements[i].name+"</li>");
+            }newWin.document.write("</ul>");
+
+        }
+    </script>
+</html>

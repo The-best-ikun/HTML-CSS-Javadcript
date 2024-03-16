@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>换行修饰符</title>
+        <!-- m会检测换行符，加上m修饰后，只会匹配这一行第一个符合条件的字符串，然后转到下一行 -->
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var str="Linuxand php,\nLINUXaa and linux and lamp";
+            var pattern=/^linux/igm;
+            // 不加^就会匹配全部
+            var strArr=str.match(pattern);
+            for(i=0;i<strArr.length;i++){
+                document.write(strArr[i]+"<br/>");
+
+            }
+        }
+    </script>
+</html>

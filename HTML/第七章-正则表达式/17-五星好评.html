@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>五星好评</title>
+        <style>
+            .main{
+                margin: 0px;
+                padding: 0px;
+            }
+            #stars{
+                background-color: antiquewhite;
+                border-radius: 0.5rem;
+                width:100%;
+                height:auto;
+            }
+            img{
+                width:100px;
+                height:100px; 
+            }
+            #btn{
+                background-color: cadetblue;
+                color: aliceblue;
+                border-radius: 0.5rem; 
+                width: 100px;
+                font-family: 宋体;
+                box-shadow: inset;
+            }
+        </style>
+    </head>
+
+
+    <body>
+        <div class="main">
+        <div id="stars_label">
+            <img src="star0.png">
+            <img src="star0.png">
+            <img src="star0.png">
+            <img src="star0.png">
+            <img src="star0.png">
+        </div>
+        <input type="button" value="提交评价" id="btn">
+        <label id="display">
+            <strong>您的评价是：<span id="assess"></span></strong>
+
+        </label>
+
+        </div>
+
+    </body>
+    <script>
+       starImgs=document.getElementsByTagName("img");
+       mySpan=document.getElementById("assess");
+        myBtn=document.getElementById("btn");
+        window.onload=function(){
+            unsure=true;
+            for(let index=0;index<starImgs.length;index++){
+                starImgs[index].onmouseover=function(){
+                    if(unsure){
+                        lightStars(index);
+                    }
+                }
+            }
+            //单击星星事件
+            for(let index=0;index<starImgs.length;index++){
+                starImgs[index].onclick=function(){
+                    sureStars(index);
+                }
+            }
+        }
+        function lightStars(img_index){
+            for(var i=0;i<=img_index;i++){
+                starImgs[i].src="star1.png";
+            }
+            for(;i<starImgs.length;i++){
+                // 熄灭星星
+                starImgs[i].src="star0.png";
+            }
+           
+        }
+        function sureStars(stars){
+            unsure=false;//设置为false，取消鼠标在元素上方移动触发的函数
+            starImgs.data=stars+1;//设置数据，也就是分数
+            
+        }
+        myBtn.onclick=function(){
+            mySpan.innerHTML=starImgs.data+"颗星星";
+        }
+
+
+        // var starImgs = document.getElementsByTagName("img");  
+  
+        // window.onload = function() {  
+        //     // 使用forEach遍历图像元素并绑定事件处理器  
+        //     Array.from(starImgs).forEach(function(img, index) {  
+        //         img.onmouseover = function() {  
+        //             lightStars(index);  
+        //         };  
+        //     });  
+        // };  
+        
+        // function lightStars(index) {  
+        //     // 点亮直到指定索引的星星  
+        //     Array.from(starImgs).forEach(function(img, i) {  
+        //         if (i <= index) {  
+        //             img.src = "star1.png"; // 点亮星星  
+        //         } else {  
+        //             img.src = "star0.png"; // 熄灭星星  
+        //         }  
+        //     });  
+        // }
+    </script>
+</html>

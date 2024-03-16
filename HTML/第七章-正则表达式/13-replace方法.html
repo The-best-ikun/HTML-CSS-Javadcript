@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>replace方法</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var strObj="This is test page";
+            var pattern=/is|es|ag/g;
+            strResult=strObj.replace(pattern,"**");//匹配到的子串将替换为**
+            document.write("源串时"+strObj+"<br/>");
+            document.write(strResult)
+        }
+    </script>
+</html>

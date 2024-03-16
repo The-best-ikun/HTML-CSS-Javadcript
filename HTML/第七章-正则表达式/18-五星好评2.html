@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>五星好评</title>
+        <style>
+            .main{
+                margin: 0px;
+                padding: 0px;
+            }
+            #stars{
+                border-radius: 0.5rem;
+                width:100%;
+                height:auto;
+            }
+            img{
+                width:100px;
+                height:100px; 
+            }
+            #btn{
+                background-color: cadetblue;
+                color: aliceblue;
+                border-radius: 0.5rem; 
+                width: 100px;
+                font-family: 宋体;
+                box-shadow: inset;
+            }
+            
+        </style>
+    </head>
+
+
+    <body>
+        <div class="main">
+        <div id="stars_label">
+            <img src="star0.png">
+            <img src="star0.png">
+            <img src="star0.png">
+            <img src="star0.png">
+            <img src="star0.png">
+        </div>
+        <input type="button" value="提交评价" id="btn">
+        <label id="display">
+            <strong>您的评价是：<span id="assess"></span></strong>
+        </label>
+
+        </div>
+
+    </body>
+    <script>
+    //    starImgs=document.getElementsByTagName("img");
+    //     window.onload=function(){
+            
+    //         for(var index=0;index<starImgs.length;index++){
+    //             starImgs[index].onmouseover=function(){
+                    
+    //                 lightStars(index);
+    //                 // 事件触发必须要用匿名函数包裹，否则会直接触发
+    //             }
+    //         }
+    //     }
+    //     function lightStars(img_index){
+    //         for(var i=0;i<=img_index;i++){
+    //             starImgs[i].src="star1.png";
+    //         }
+    //         for(i=4;i>img_index;i--){
+    //             if(starImgs[i].src=="star1.png")
+    //             starImgs[i].src="star0.png";
+    //         }
+    //     }
+
+
+
+        starImgs=document.getElementsByTagName("img");
+        myspan=document.getElementById("assess");
+        myBtn=document.getElementById("btn");
+        window.onload=function(){
+            unsure=true;
+           
+            for(let index=0;index<starImgs.length;index++){
+                starImgs[index].onmouseover=function(){
+                    if(unsure){
+                        lightStars(index);
+                    }
+                    // 事件触发必须要用匿名函数包裹，否则会直接触发
+                }
+            }
+           
+
+            //确定星星
+            for(let index=0;index<starImgs.length;index++){
+                starImgs[index].onclick=function(){
+                    sureStars(index);
+                    // 事件触发必须要用匿名函数包裹，否则会直接触发
+                }
+            }
+
+
+        }
+
+        function lightStars(img_index){
+            for(var i=0;i<=img_index;i++){
+                starImgs[i].src="star1.png";
+            }
+            for(;i<starImgs.length;i++){
+                // 熄灭星星
+                starImgs[i].src="star0.png";
+            }
+        }
+        function sureStars(stars){
+            unsure=false;//设置为false，取消鼠标在元素上方移动触发的函数
+            starImgs.data=stars+1;//设置数据，也就是分数
+            
+        }
+        myBtn.onclick=function(){
+            myspan.innerHTML=starImgs.data+"颗星星";
+        }
+
+         
+        
+    </script>
+</html>

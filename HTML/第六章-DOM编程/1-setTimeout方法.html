@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>setTimeout</title>
+
+
+    <body>
+        <label id="dispTime"></label>
+    </body>
+    <script>
+        window.onload=function(){
+            dispTime=document.getElementById("disTime");
+            dispTime.value="hello"
+            interval=1000;//设置刷新时间为1秒
+            function change(){
+                var today = new Date();
+                dispTime.innerHTML= two(today.getHours()+":");
+                dispTime.innerHTML= two(today.getMinutes()+":");
+                dispTime.innerHTML= two(today.getSeconds);
+                // 创建了一个计时器，每一秒钟就会调用名为change的函数
+                timerId =window.setTimeout(change,interval);
+                // 递归调用，但是我在想，这样时间长了不会把内存挤满了吗？
+                // 书中写到可以用window.clearTime()来清除这个计时器
+            }
+            function two(x){
+                return x>10?x:"0"+x;
+            }
+            change();
+        }
+    </script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Date对象</title> 
+
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            stamp=new Date();
+            document.write('<font size="2"><b>'+stamp.getFullYear()+"年"
+                +(stamp.getMonth()+1)+"月"
+                +stamp.getDate()+"日"
+                +'</b></font><br>'
+                );
+                hours=stamp.getHours();
+                if(hours>=12){
+                    times="下午"
+                }else{
+                    times="上午"
+                }
+                if(hours>12){
+                    hours-=12
+                }
+                if(hours==0){
+                    hours=12
+                }
+                mins=stamp.getMinutes();
+                if(mins<10){
+                    mins="0"+mins;
+                }
+                document.write('<font size="2"><b>'+times+hours+":"+mins+'</b></font>');
+        }
+    </script>
+</html>

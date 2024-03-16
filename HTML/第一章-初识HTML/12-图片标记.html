@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>图片标记</title>
+    </head>
+
+    <!-- 这里有个小疑问，这样设置的图片链接是在当前窗口跳转资源，那我要是想创建新窗口跳转该怎么设计 -->
+    <body>
+        <!-- <img src="文件路径" alt="提示文本" width="宽度"  height="高度"> 
+        最基本的图片标签就不说了，这里主要讲一张图片分区多个超链接的做法-->
+        <img src="https://ts1.cn.mm.bing.net/th/id/R-C.d77d6f8f4cb051097ba892bf19e22ebb?rik=T9jYQ426ic6cWw&riu=http%3a%2f%2fpic.bizhi360.com%2fbbpic%2f12%2f3812.jpg&ehk=RwcqgaswHYjHg%2fqIF%2f5JqvKl4PeCi7JHH71N0cqICJQ%3d&risl=&pid=ImgRaw&r=0" 
+        alt="一张藏有多个链接的图片"
+        width="1000" height="800" usemap="#myMap">
+        <map name="myMap">
+            <!-- 在Map标签里定义链接以及链接的热点区域
+            热点区域的形状shape有rect矩形，circle圆形，poly多边形三种
+            coords指坐标，以矩形为例，前面的两个表示起点坐标，后两个表示重点坐标
+            如果是圆形的话只需要输入三个坐标值就行 -->
+            <area shape=rect coords="0,0,1000,400" href="https://www.baidu.com">
+            <area shape=rect coords="0,400,1000,800" href="https://www.jd.com">
+        </map>
+
+    </body>
+</html>

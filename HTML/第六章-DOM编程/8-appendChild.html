@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>appendChild</title>
+
+
+    <body>
+        <ul id="myNode">
+            <li>音乐</li>
+            <li>足球</li>
+            <li>篮球</li>
+        </ul>
+
+    </body>
+    <script>
+        window.onload=function(){
+            // 这个也得一步一步来
+            var myNode=document.getElementById("myNode");
+            // 获取节点
+            var newNode=document.createElement("li");
+            // 获取待创建节点元素类型
+            var newText=document.createTextNode("新增的乒乓球");
+            // 创建节点文字内容
+
+            
+            // 将文字内容插入节点中
+            newNode.appendChild(newText);
+
+            myNode.appendChild(newNode);
+
+        }
+    </script>
+</html>

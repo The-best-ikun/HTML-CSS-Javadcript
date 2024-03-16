@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>replaceChild方法</title>
+    <body>
+        <ul id="myNode">
+            <li>音乐</li>
+            <li>足球</li>
+            <li>篮球</li>
+        </ul>
+        
+    </body>
+    <script>
+        window.onload=function(){
+            var myNode=document.getElementById("myNode");
+            var myLiNode=myNode.getElementsByTagName("li");
+            var oldNode=myLiNode[1];//拿到足球
+            var replaceText=document.createTextNode("能替换下足球的球");
+            var newNode=document.createElement("li");
+            newNode.appendChild(replaceText);
+            // 两个参数哦,先新后老
+            myNode.replaceChild(newNode,oldNode);
+
+        }
+    </script>
+</html>

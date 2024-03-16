@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>溢出与剪切</title>
+        <style>
+            div{
+                margin-top: 10px;
+            }
+            .mainBox1{
+                width:100px;
+                height:100px;
+                background:pink;
+                position:relative;
+                overflow:visible;
+                /* 溢出可见 */
+            }
+            .mainBox2{
+                width:100px;
+                height:100px;
+                background:pink;
+                position:relative;
+                overflow:hidden;
+                
+            }
+            .mainBox3{
+                width:100px;
+                height:100px;
+                background:pink;
+                position:relative;
+                overflow:scroll;
+                
+            }
+            .mainBox4{
+                width:100px;
+                height:100px;
+                background:pink;
+                position:relative;
+                overflow:auto;
+               
+            }
+            .subBox{
+                width:500px;
+                height:50px;
+                background-color: aqua;
+                top:20px;
+                left:20px;
+            }
+        </style>
+    <body>
+        <!-- 这里指的溢出和剪切主要指的是盒子模型的overflow属性 -->
+        <!-- visible:即使超出本身容器范围也会显示 -->
+        <!-- hidden：超出显示内容区域将不会显示 -->
+        <!-- scroll：超出内容区域的将以滚动条方式表示，不超出也会预设滚动条 -->
+        <!-- auto：一般与滚动条一样，只是不超出不会预设滚动条 -->
+
+        <!-- 注意：子盒子使用了绝对定位的话，父盒子必须使用相对定位才能进行正常裁剪，因为此时他们都脱离了普通文档流 -->
+        <div class="mainBox1">
+            <div class="subBox">
+                可见
+            </div>
+        </div>
+
+        <div class="mainBox2">
+            <div class="subBox">
+                隐藏
+            </div>
+        </div>
+        <div class="mainBox3">
+            <div class="subBox">
+                    滚动条
+            </div>
+        </div>
+
+        <div class="mainBox4">
+            <div class="subBox">
+                自动
+            </div>
+        </div>
+
+    </body>
+</html>

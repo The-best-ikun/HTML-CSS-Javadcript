@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>元字符</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var mobileArr=new Array("12994767540","10034762948","15782954792","13890534267");
+            var pattern =/^1[45]\d{9}|1[23]9\d{8}/;
+            // 寻找14开头或者15开头
+            // 寻找129开头或者139开头·
+            document.write("<h1>手机号码如下</h1>")
+            for(i=0;i<mobileArr.length;i++){
+                document.write(mobileArr[i]+"<br/>");
+                
+            }
+            document.write("<h1>符合条件的手机号码如下</h1>")
+            for(i=0;i<mobileArr.length;i++){
+                // 该方法用于判断字符串是否匹配条件
+                if(partern.test(mobileArr[i]))
+                document.write(mobileArr[i]+"<br/>");
+                
+            }
+
+            
+
+        }
+    </script>
+</html>

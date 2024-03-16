@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>insertBeforeChild方法</title>
+        <!-- 在当前节点前插入一个节点 -->
+    <body>
+        <ul id="myNode">
+            <li>音乐</li>
+            <li>足球</li>
+            <li>篮球</li>
+        </ul>
+        
+    </body>
+    <script>
+        window.onload=function(){
+            var myNode=document.getElementById("myNode");
+            var myLiNode=myNode.getElementsByTagName("li");
+            var afterNode=myLiNode[1];//拿到足球
+            var insertText=document.createTextNode("插在足球前的球");
+            var newNode=document.createElement("li");
+            newNode.appendChild(insertText);
+            // 两个参数哦,前面是要插入的节点，后面是要插入到那个节点前面
+            myNode.insertBefore(newNode,afterNode);
+
+        }
+    </script>
+</html>

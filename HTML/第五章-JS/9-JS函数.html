@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JS函数</title>
+
+
+    <body>
+        
+        <pre>
+
+            JS函数比较方便，不用写返回值
+            也不用给参数指定数据类型
+            function 函数名(参数...){
+                函数语句块
+            }
+        </pre>
+    </body>
+    <script>
+        function total(i,j){
+            var sum;
+            sum=i+j;
+            return sum;
+        }
+        document.write("函数total(100,20)结果为",total(200,20));
+        document.write("<br/>");
+        document.write("函数total(1,1)结果为",total(1,1));
+    </script>
+</html>

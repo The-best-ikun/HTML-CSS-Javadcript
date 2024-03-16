@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>表单</title>
+    </head>
+    <body>
+        <!-- 表单的组成：表单标签，表单域，表单按钮
+        表单标签：包含处理表单内容的URL地址与提交方法
+        表单域：文本框，密码框，隐藏域，多行文本框，复选框，单选按钮，下拉选择框，文件上传框
+        表单按钮：提交按钮，重置按钮，选择按钮
+     -->
+
+     <!-- 表单标签：
+     enctype属性：发送服务器之前如何对数据进行编码，一般采用默认值即可
+     target属性：将数据提交给服务器后，服务器返回的文档的呈现方式
+     _blank:新窗口显示
+     _self:当前浏览器中显示
+     _parent:父级框架中显示，没有自动转为_self
+     _top:最顶层浏览器窗口
+     <form action="URL" method="get/post" enctype="..." target="..."></form> -->
+
+
+
+     <form action="" method="post">
+        <!-- 限制长度的属性也很重要 -->
+        请输入你的真实姓名：<input type="text" name="userName"     maxlength="10">
+        <br>
+        请输入你的主页网址：<input type="text" name="webArrdess">
+        <br>
+        请输入你的邮件地址：<input type="email" name="email">
+        <br>
+        请输入你的密码：<input type="password" name="password">
+        <br>
+
+
+
+
+        <!-- 单选按钮 -->
+        <input type="radio"   name="sg" value="香蕉">香蕉<br>
+        <input type="radio"   name="sg" value="苹果">苹果<br>
+        <input type="radio"   name="sg" value="榴莲">榴莲<br>
+
+
+        <!-- 复选框 -->
+        <input type="checkbox" name="ra1" value="football">足球<br>
+        <input type="checkbox" name="ra2" value="basketball">篮球<br>
+        <input type="checkbox" name="ra3" value="baseball">棒球<br>
+
+
+        <!-- 隐藏域，可以发送一些隐秘信息给服务器，网页访问者看不到 -->
+        <input type="hidden" name="隐藏信息" value="具体信息"><br>
+
+
+        <!-- 下拉值菜单 
+        size为一次性显示条数，太多就会有滚动条
+        multipe是否支持多选-->
+
+
+        <select name="下拉菜单" size="1" multipe>
+            <option value="选项一" selected>选项一</option>
+            <option value="选项二" >选项二</option>
+            <option value="选项三" >选项三</option>
+            <option value="选项四" >选项四</option>
+            <option value="选项五" >选项五</option>
+        </select>
+        <br>
+
+
+
+        <!-- 多行文本框 -->
+        <!-- cols:决定文本一行的长度，也表示文本框的宽度，由于中文比较特殊，你把属性设为60，一行只能存储30个字符
+        rows:表示可显示的行数，间接确定了文本框的高度
+        wrap：off，默认效果，不会自动换行，vitrual，在用户眼里自动换行，但发送给服务器时不换行，
+        physical，用户眼里与服务器里的都会自动换行
+        <textarea name="..." cols="..." rows="..." warp="off/virtual/physical"></textarea>
+        -->
+
+
+
+        <!-- 这个也有点小问题 -->
+
+        <textarea name="多行文本框" cols="20"   rows="10"   wrap="physcial" placeholder="请输入你的文本内容">
+
+        </textarea>
+
+        <br>
+
+
+
+        <input type="submit" value="提交按钮">
+        <br>
+        <input type="reset" value="重置按钮">
+     </form>
+
+    </body>
+</html>

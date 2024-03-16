@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>getElementsByTagName</title>
+
+
+
+        <!-- 流弊！！！！！！！ -->
+
+        <!-- getElementsByTagName 返回的是一个 HTMLCollection，
+        它类似于数组，但是并不是真正的数组。您可以通过索引来访问集合中的元素，
+        但是 item 方法通常用于按索引访问 NodeList 中的元素，而在现代浏览器中，
+        直接使用索引通常更方便。
+        另外，myBody.item(1) 实际上不会返回第二个 <p> 元素，
+        因为 myBody 集合只包含一个元素，即 <body> 元素本身。
+        要获取 <body> 内部的 <p> 元素，应该再次调用 getElementsByTagName，
+        但这次是在 myBody[0]（即 <body> 元素）上调用。 -->
+    <body>
+        <p>hello</p>
+        <p>world</p>
+        <div id="disp"></div>
+    </body>
+    <script>
+        // 这个方法返回的也是类似数组的集合
+        // 参数需要双引号
+        var myDocumentElements=document.getElementsByTagName("body");
+        // 这样才能得到body
+        // 反正就是一步一步从外到里才能获取到自己想要的标签名
+        var myBody=myDocumentElements.item(0);
+        var myPs=myBody.getElementsByTagName("p")
+        var myP1=myPs.item(0);
+        var myP2=myPs.item(1);
+        var myDisp=document.getElementById("disp");
+        // 这个DOM树的节点操作还真没咋做过
+        // 最后没做出来，用textContent替换了
+        myDisp.innerHTML= "显示第二个P元素的内容是"+myP2.textContent;
+
+
+        
+    </script>
+</html>

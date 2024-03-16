@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>循环转移语句</title>
+
+
+    <body>
+        <script>
+            i=0;
+            count=0;
+            while(i<100){
+                if(i%3==0|| i%2==0){
+                    i++;
+                    continue;
+                    // 跳过之后的代码，继续步进，执行下一阶循环
+                }
+                count++;
+                if(count>8){
+                    document.write("<br>");
+                    count=0;
+                    // 计数器清零
+                }
+                document.write("&nbsp;",i);//输出空格和内容
+                i++;
+            }
+        </script>
+
+    </body>
+</html>

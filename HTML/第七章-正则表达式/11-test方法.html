@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>test方法</title>
+        <!-- 就是那表达式去匹配字符串，一般是匹配字符串数组才会用到 -->
+    </head>
+
+    <body>
+        请输入电子邮件地址:
+        <!-- HTML有检查email格式的type -->
+        <input type="text" id="email">
+        <input type="button" value="检测合法性" id="btn">
+
+    </body>
+    <script>
+        var btn=document.getElementById('btn');
+        var email=document.getElementById("email");
+        var pattern=/^\w+@\w+[.]*\w+$/;
+        // \w表示匹配任意一个字母数字或者下划线
+        btn.onclick=function(){
+            if(pattern.test(email.value)){
+                document.write("输入格式合法")
+            }else{
+                document.write("输入格式不不不合法")
+            }
+        }
+
+    </script>
+</html>

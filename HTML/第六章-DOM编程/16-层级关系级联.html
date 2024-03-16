@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>层级关系级联-元素创建</title>
+    </head>
+
+
+    <body>
+        <div id="main"></div>
+        <div id="display"></div>
+    </body>
+    <script>
+        window.onload=function(){
+            // 搁这疯狂套娃啊，我都快写吐了
+            
+                var myBody=document.getElementsByTagName("body")[0];//案例的问题还是我的问题，怎么又不用item而是直接拿索引去获取了
+                var myTable=document.createElement("TABLE");
+                var myTBody=document.createElement("TBODY");
+                // getElementsByTagName 返回的是一个 HTMLCollection 对象，
+                //您应该使用索引 [0] 来访问集合中的第一个元素，而不是使用 .item[0]。
+
+
+                for(i=0;i<3;i++){
+                    myTR=document.createElement("TR");
+                    for(j=0;j<3;j++){
+                        var myTD=document.createElement("TD");
+                        var myText=document.createTextNode("第"+i+"行，第"+j+"列");
+                        myTD.appendChild(myText);
+                        myTR.appendChild(myTD);
+                    }
+
+                    myTBody.appendChild(myTR);
+                }
+                myTable.appendChild(myTBody);
+                myBody.appendChild(myTable);
+                myTable.setAttribute("border","2");
+
+
+        }
+
+    </script>
+</html>

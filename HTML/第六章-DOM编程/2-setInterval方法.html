@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>setInterval</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+            }
+            #box{
+                width:520px;
+                height: 280px;
+                border: 1px solid red;
+                margin: 100px auto;
+                /* 相对定位，设为移动参考点 */
+                position: relative;
+                background-size: contain;
+            } 
+            #box ul{
+                list-style: none;
+            }
+            #number{
+                position: absolute;
+                /* 绝对定位，按照参考点移动 */
+                right:10px;
+                bottom:10px;
+            }
+            #number li{
+                width:20px;
+                height:20px;
+                border-radius:50%;
+                text-align:center;
+                line-height:20px;
+                float:left;
+                margin: 5px;
+                background: white;
+            }
+            #number li:hover{
+                color:aliceblue;
+                background: red;
+            }
+            #box ul li.active{
+                background: rgb(133, 133, 252);
+            }
+            #myImg{
+                /* 保证纵横比，解决图片尺寸过大的问题 */
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    <body>
+        <div id="box">
+            <ul>
+                <li>
+                    <img src="./images/scenery_01.jpg" id="myImg">
+                </li>
+            </ul>
+            <ul id="number">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </body>
+    <script>
+        window.onload=function(){
+            imgCount=0;
+            myImg=document.getElementById("myImg");
+            myBox=document.getElementById("box");
+            myNumberBox=document.getElementById("number");
+            // 看好是获取标签名数组
+            myNumberLi=myNumberBox.getElementsByTagName("li");
+
+            for(i=0;i<myNumberLi.length;i++){
+                myNumberLi[i].index=i;
+                myNumberLi[i].onclick=function(){//用户点击时，移除active状态
+                    for(i=0; i<myNumberLi.length;i++){
+                        // 好像从来没说过这种写法，还是我没看完书的原因
+                        myNumberLi[i].classList.remove("active");
+                    }
+                    this.classList.add("active");//不点击则添加active属性
+
+                    imgCount=this.innerHTML;//调整索引值,得到列表里的数值
+                    // 改变img标记中显示的图片
+                    myImg.src="./images/scenery_0"+(imgCount)+".jpg";
+                }
+
+                // 定义启动定时器的事件
+                myBox.onmouseover=function(){
+                    clearInterval(timeOUT);
+                }
+
+                myBox.onmouseout=function(){
+                    timeOUT=setInterval(changeImg,3000);
+                }
+
+                function changeImg(){
+                    imgCount++;
+                    imgCount=imgCount%5;//超过5，回归零
+                    myImg.src="./images/scenery_0"+(imgCount+1)+".jpg";//加一是因为imgCount是从0开始的，但我们的图片名称是从1开始的
+                    for(i=0;i<myNumberLi.length;i++){
+                        myNumberLi[i].classList.remove("active");
+                    }
+                    myNumberLi[imgCount].classList.add("active");
+                }   
+                
+            }
+            timeOUT=setInterval(changeImg,3000);
+
+        }
+    </script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>边框绘制几何图形</title>
+        <!-- 在9的案例中，我们可以看到上下左右边框交界处会得到平滑的斜线
+            ，由此我们可以绘制出一些有趣的几何图形 -->
+            <style>
+                #box{
+                    width:600px
+                }
+
+                
+                #box div{
+                    float: left;
+                    margin:10px;
+                    background: rgb(170, 200, 49);
+                }
+                .square{
+                    width:100px;
+                    height: 100px;
+                }
+                .rectangle{
+                    width:200px;
+                    height:100px;
+                }
+                .trapezoid{
+                    /* 下边框加粗100像素 */
+                    border-bottom: 100px solid rgb(170, 200, 49);
+                    /* 左右边框加粗50像素，设置为透明 */
+                    border-left: 50px solid transparent;
+                    border-right:50px solid transparent;
+                }
+                /* 这个平行四边形看得人真迷糊 */
+                .paralleogram{
+                    width:150px;
+                    height:100px;
+                    /* 这个属性一般是用来转大小写的，还能这样用？倾斜20度 */
+                    transform:skew(-20deg);
+                    margin-left: 20px;
+                }
+                #box .triangle-up{
+                    width:0px;
+                    height:0px;
+                    border-left: 50px solid transparent;
+                    border-right:50px solid transparent;
+                    border-bottom: 100px solid rgb(170, 200, 49);
+                }
+
+                /* ID选择然后后代元素选择：例如 #myId div。
+                这里，#myId 是一个ID选择器，它本身就有很高的优先级。
+                即使后面跟着一个后代选择器（如 div），
+                整个选择器的优先级仍然主要由ID选择器决定。
+                直接的类选择：例如 .myClass。
+                这是一个类选择器，其优先级低于ID选择器。
+                因此，ID选择然后后代元素选择的优先级高于直接的类选择。 */
+                #box .circle-circle{
+                    width: 100px;
+                    height: 100px;
+                    border: 20px solid rgb(170, 200, 49);
+                    background-color: aqua;
+                    border-radius: 100px;
+                }
+                
+            </style>
+
+
+    <body>
+        <div id="box">
+            <div class="square">正方形</div>
+            <div class="rectangle">长方形</div>
+            <div class="trapezoid">梯形</div>
+            <div class="paralleogram">平行四边形</div>
+            <div class="triangle-up">三角形</div>
+            <div class="circle-circle" id="circle-circle">空心圆</div>
+        </div>
+
+    </body>
+</html>

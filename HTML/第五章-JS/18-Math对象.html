@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Math对象</title>
+        <style>
+            #display{
+                background-color: aqua;
+                font-family: 宋体;
+                font-size: 32px;
+                color: rgb(255, 128, 2);
+                font-weight: bold;
+            }
+        </style>
+
+
+    <body>
+        <input type="text" id="myInput" >
+        <input type="button" id="myBtn" value="测试">
+        <lable id="display"></lable>
+        
+
+    </body>
+    <script>
+        window.onload=function(){
+            var myRandom=Math.floor(Math.random()*100);//对数进行下舍入
+            var myBtn=document.getElementById("myBtn");
+            var myInput=document.getElementById("myInput");
+            var myDisplay=document.getElementById("display");
+            myBtn.onclick=function(){
+                // 这个value属性怎么没有提示用法
+                myValue=myInput.value;
+                if(isNaN(myValue)){
+                    myDisplay.innerHTML="请输入0-100的数字";
+                }else{
+                    if(myValue>myRandom){
+                        myDisplay.innerHTML="数据大了"
+                    }else if(myValue<myRandom){
+                        myDisplay.innerHTML="数据小了"
+                    }else{
+                        myDisplay.innerHTML="猜对了"
+                    }
+                }
+            }
+        }
+    </script>
+</html>

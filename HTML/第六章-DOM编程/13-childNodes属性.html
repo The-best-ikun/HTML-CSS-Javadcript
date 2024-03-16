@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>childNode属性</title>
+       
+    <body>
+        <ul id="myUl">
+            <li>音乐</li>
+            <li>足球</li>
+            羽毛球
+        </ul>
+        <p id="p1">childNodes显示的节点数：</p>
+        <p id="p2">元素类型的节点数：</p>
+        <p id="p3">文本类型的节点:</p>
+        
+    </body>
+    <script>
+        window.onload=function(){
+            elementSum=0;
+            textSum=0;
+            var myUl=document.getElementById("myUl");
+            var myP1=document.getElementById("p1");
+            var myP2=document.getElementById("p2")
+            var myP3=document.getElementById("p3");
+            for(i=0;i<myUl.childNodes.length;i++){
+                switch(myUl.childNodes[i].nodeType){
+                    case 1:
+                        elementSum++;
+                        break;
+                    case 3:
+                        textSum++;
+                        break;
+                }
+            }
+            myP1.innerHTML+=myUl.childNodes.length;
+            myP2.innerHTML+=elementSum;//有5个是因为有p标签
+            myP3.innerHTML+=textSum;
+
+
+        }
+    </script>
+</html>

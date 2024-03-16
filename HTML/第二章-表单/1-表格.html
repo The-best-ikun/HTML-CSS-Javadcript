@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>表格</title>
+    </head>
+    <body>
+        <!-- 表格的相关标签
+        <table></table>最外层标记，代表一个表格
+        <tr></tr>行，row
+        <td></td>单元格
+        <th></th>单元格标题，与td作用相似，但一般只用于表头行,字体会有加粗效果
+        <thead></thead>表头分组
+        <tfoot></tfoot>表尾分组
+        <tbody></tbody>表格主体分组
+        <colgroup></colgroup>列分组
+        <caption></caption>表格标题
+
+
+        表格的一些属性
+        align:对齐
+        border:表格边框
+        bordercolor:边框颜色
+        bgcolor:背景颜色
+        background:背景图片
+        cellspacing:单元格间距
+        cellpadding:单元格内容与边框的间距
+        height:高
+        width:宽 -->
+
+
+
+        <table align="center" border="2" bgcolor="blue" bordercolor="red" 
+        width="400px" height="400px" cellspacing="2" cellpadding="3" >
+            <caption>这是第一个表格</caption>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>籍贯</th>
+            </tr>
+            <tr>
+                <td>1001</td>
+                <td>你哈</td>
+                <td>中国</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>张三</td>
+                <td>中国</td>
+            </tr>
+        </table>
+
+        <table align="center" border="2" bgcolor="blue" bordercolor="red" 
+        width="400px" height="400px" cellspacing="2" cellpadding="3" >
+            <caption>这是第二个表格</caption>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>籍贯</th>
+            </tr>
+            <tr>
+                <td>1001</td>
+                <td>你哈</td>
+                <td>中国</td>
+            </tr>
+            <tr>
+                <td>1002</td>
+                <td>张三</td>
+                <td>中国</td>
+            </tr>
+            <tr align="center" valign="middle" height="50px" bgcolor="yellow">
+
+                <!-- valign="middle" 垂直居中效果 -->
+                <td>1003</td>
+                <td>李四</td>
+                <td>中国</td>
+            </tr>
+        </table>
+
+        <!-- 单元格合并 -->
+        <td rowspan="所跨行数" colspan="所跨列数"></td>
+        <table border="2" width="400px">
+            <caption>这是第三个表格</caption>
+            <tr>
+                <td>单元格</td>
+                <td>单元格</td>
+                <td>单元格</td>
+                <td rowspan="2">这个单元格跨两行</td>
+            </tr>
+            <tr>
+                <td>单元格</td>
+                <td>单元格</td>
+                <td>单元格</td>
+            </tr>
+
+            <tr>
+                <td>单元格</td>
+                <td>单元格</td>
+                <td colspan="2">这个单元格跨两列</td>
+            </tr>
+        </table>
+        
+
+
+
+
+    </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>背景属性</title>
+        <style>
+           div{
+            width:209px;
+            height:210px;
+            background-image:url(https://gd-hbimg.huaban.com/221e329e57292db77256338cd6b146929edccaf5853f-o5620m_fw658);
+            background-position:0px 210px;
+            
+            float:left;
+           }
+           /* 伪类，鼠标经过DIV容器时，属性会改变成伪类里的 */
+           div:hover{
+            background-position:209px 210px;
+            /* 这个用着做效果特舒服 */
+           }
+
+        
+        </style>
+    </head>
+    <body>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+
+
+
+
+
+        <hr>
+        <pre>
+            background 简写属性 所有属性都可写在这里面
+            background-attachmment 设置背景图像是否固定或者跟随这页面的其余部分滚动，scroll指跟随滚动，fixed则固定
+            background-color 设置元素的背景颜色
+            background-image 将图像设置为背景
+            background-position 设置图像的起始位置（也可直接用坐标具体值，或者百分比），left水平居左，right水平居右，center为居中，top垂直靠上，bottom 垂直靠下 可设置精确值
+            background-repeat 设置图片重复 默认重复，不重复可设置成 no-repeat
+            background-size: cover为全覆盖，可能丢失部分图片内容，contain为包含，可能容器会有部分空白区
+
+        </pre>
+    </body>
+</html>

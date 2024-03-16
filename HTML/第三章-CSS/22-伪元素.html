@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>伪元素</title>
+        <style>
+            .f1::first-line{
+                color:red;
+                font-size: 48px;
+            }
+            .myclass::first-letter{
+                color:aqua;
+                font-size: xx-large;
+            }
+            .youclass::before{
+                content:"累哈我了~`~";
+
+            }
+            .youclass::after{
+                content:"写完了";
+                
+            }
+           
+        </style>
+    </head>
+    <body>
+        <p class="f1">
+            文本首行
+            <br>
+            文本第二行
+        </p>
+        <p class="myclass">
+            可以使用“first-letter"伪元素设置首字母的特殊样式
+        </p>
+        <p class="youclass">
+            今天最后一行
+        </p>
+    </body>
+</html>

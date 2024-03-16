@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>普通字符匹配</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var pattern=/[A-Za-z]*is+/g;
+            // 两根斜杆表示正则表达式开始与结束 [A-Za-z]表示匹配字母大小写 *表示重复0次或者多次 is表示的就是is这两个字符
+            // 匹配任意任意字母加任意字符加is的字符串
+            var str="This is a test for you   nj123byis"
+            var strArr=str.match(parttern);
+            for(i=0;i<strArr.length;i++){
+                document.write(strArr[i]+"<br/>")
+            }
+        }
+    </script>
+</html>

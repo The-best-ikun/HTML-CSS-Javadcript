@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>绝对定位</title>
+        <style>
+            #box{
+                height:200px;
+                width:300px;
+                margin:0px auto;/*块元素自动居中*/
+                background-color: gray;
+                position:relative;
+    
+
+            }
+            #box p{
+                text-align: center;
+                border:5px blue solid;
+                width:100px;
+                margin:15px;
+                background-color: pink;
+            }
+            #box p.absolute{
+                background-color: yellow;
+                position:absolute;
+                top:10px;/*相对于父元素下移10像素*/
+                left:40px;/*相对于父元素右移40像素*/
+            }
+        </style>
+
+
+    <body>
+        <!-- 绝对定位是相对于父级元素或者说祖先元素（
+            元素是相对定位，且离本元素层级关系最近的左上角来定位的）来说的
+        如果祖先元素没有一个是realtive的话，就是以body的左上角开始定位 -->
+        <div id="box">
+            <p>第一段文字</p>
+            <p class="absolute">第二段文字</p>
+            <p>第三段文字</p> 
+        </div>
+
+    </body>
+</html>

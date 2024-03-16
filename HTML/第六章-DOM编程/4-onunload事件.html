@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>onunload事件</title>
+
+
+    <body>
+        <h1>别关闭窗口</h1>
+    </body>
+    <script>
+        // 这个代码有点小问题
+        window.onunload=function(){
+            alert("你真的要关闭窗口吗？");
+        }
+    </script>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>表单综合练习</title>
+    </head>
+    <body>
+        <table align="center" width="600" border="0" cellpadding="2" cellspacing="0">
+            <caption align="center"><h2>学生注册信息表</h2></caption>
+            <form action="" method="post">
+                <tr>
+                    <th>姓名</th>
+                    <td><input type="text" name="username" size="20"/></td>
+                
+                </tr>
+                <tr>
+                    <th>性别</th>
+                    <td>
+                    <input type="radio" name="sex" value="1" checked="checked"/>男
+                    <input type="radio" name="sex" value="2" />女
+                    <input type="radio" name="sex" value="0" />保密
+                    </td>
+                </tr>
+                <tr>
+                    <th>学历</th>
+                    <td>
+                        <select name="edu">
+                            <option value="0">--请选择--</option>
+                            <option value="1">高中</option>
+                            <option value="2">专科</option>
+                            <option value="3">本科</option>
+                            <option value="4">研究生</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>选修课程</th>
+                    <td>
+                        <input type="checkbox" name="course[]" value="1">语文
+                        <input type="checkbox" name="course[]" value="2">数学
+                        <input type="checkbox" name="course[]" value="3">英语
+                        <input type="checkbox" name="course[]" value="4">化学
+                        <input type="checkbox" name="course[]" value="5">历史
+                        <input type="checkbox" name="course[]" value="6">政治
+                        <input type="checkbox" name="course[]" value="7">物理
+                        <input type="checkbox" name="course[]" value="8">生物
+                        <input type="checkbox" name="course[]" value="9">地理
+                    </td>
+                </tr>
+                <tr>
+                    <th>自我评价</th>
+                    <td>
+                        <textarea name="eval" rows="4" cols="40" ></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center" >
+                        <input type="submit" value="提交"/>
+                        <input type="reset" value="重置"/>
+
+
+                    </td>
+                </tr>
+
+            </form>
+        </table>
+
+    </body>
+</html>

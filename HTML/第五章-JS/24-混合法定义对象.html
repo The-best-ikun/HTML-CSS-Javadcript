@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>混合法定义对象</title>
+
+
+    <body>
+           
+    </body>
+    <script>
+        window.onload=function(){
+            function User(name,age,address,mobile,email){
+                this.name=name;
+                this.age=age;
+                this.address=address;
+                this.mobile=mobile;
+                this.email=email;
+            };
+            User.prototype.show=function(){
+                
+                    document.write("姓名："+this.name+'<br/>');
+                    document.write("年龄："+this.age+'<br/>');
+                    document.write("地址："+this.address+'<br/>');
+                    document.write("移动电话："+this.mobile+'<br/>');
+                    document.write("邮件地址："+this.email+'<br/>');
+            } 
+            var person=new User("张三",18,"上海","12345","4442671@qq.com");
+            person.show();   
+        }
+    </script>
+</html>

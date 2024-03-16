@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>过渡案例</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 100px;
+                border:1px solid #000;
+                margin: 100px auto;
+                background: red;
+                transition: all;
+                /* 过渡时间 */
+                transition-duration: 2s;
+                /* 过渡曲线 */
+                transition-timing-function: ease;
+                /* 过渡延时 */
+                transition-duration:500ms;
+
+            }
+            .box:hover{
+                width:100%;
+                background-color: aqua;
+            }
+        </style>
+
+
+    <body>
+        <div class="box"></div>
+    </body>
+</html>

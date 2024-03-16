@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>removeChild</title>
+
+
+    <body>
+        <ul id="myNode">
+            <li>音乐</li>
+            <li>足球</li>
+            <li>篮球</li>
+        </ul>
+
+    </body>
+    <script>
+        window.onload=function(){
+            // 这个也得一步一步来
+            var myNode=document.getElementById("myNode");
+            // 获取ul节点
+            var myLis=myNode.getElementsByTagName("li");
+            // 得到li
+           
+            var removeLi= myLis[1]; // 通过集合索引得到待移除的元素对象
+
+            myNode.removeChild(removeLi);
+
+        }
+    </script>
+</html>

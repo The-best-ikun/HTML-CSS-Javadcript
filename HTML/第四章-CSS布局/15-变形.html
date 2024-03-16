@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>变形</title>
+        <style>
+            div{
+                width:100px;
+                height:100px;
+                border:1px solid #000;
+                background-color: red;
+                float:left;
+                margin:50px;
+            }
+            .box-one{
+                /* 旋转30度 */
+                transform:rotate(30deg);
+            }
+            .box-two{
+                /* 右移下移20像素 */
+                transform:translate(20px,20px);
+            }
+            .box-three{
+                /* 宽变为原来的两倍，高变为原来的1.5倍 */
+                transform:scale(2,1.5);
+            }
+            .box-four{
+                /* 在X轴和Y轴上倾斜30度和20度 */
+                transform:skew(30deg,20deg);
+            }
+        </style>
+    <body>
+        <div class="box-one"></div>
+        <div class="box-two"></div>
+        <div class="box-three"></div>
+        <div class="box-four"></div>
+
+    </body>
+</html>
+<!-- 
+    CSS的`transform`属性允许你对元素进行2D或3D转换，包括旋转、缩放、倾斜和位移等。以下是`transform`属性的一些常用函数及其描述，以表格形式列出：
+
+| 函数 | 描述 | 示例 |
+| --- | --- | --- |
+| `translate(x, y)` | 沿X轴和Y轴移动元素 | `transform: translate(50px, 100px);` |
+| `rotate(angle)` | 旋转元素 | `transform: rotate(45deg);` |
+| `scale(x, y)` | 缩放元素 | `transform: scale(2, 0.5);` |
+| `skew(x-angle, y-angle)` | 倾斜元素 | `transform: skew(30deg, 20deg);` |
+| `matrix(a, b, c, d, e, f)` | 定义一个2D变换矩阵 | `transform: matrix(1, 0.5, -0.5, 1, 30, 30);` |
+| `rotateX(angle)` | 沿X轴旋转元素（3D变换） | `transform: rotateX(45deg);` |
+| `rotateY(angle)` | 沿Y轴旋转元素（3D变换） | `transform: rotateY(45deg);` |
+| `rotateZ(angle)` | 沿Z轴旋转元素（等同于`rotate(angle)`） | `transform: rotateZ(45deg);` |
+| `scaleX(x)` | 沿X轴缩放元素（3D变换） | `transform: scaleX(2);` |
+| `scaleY(y)` | 沿Y轴缩放元素（3D变换） | `transform: scaleY(0.5);` |
+| `scaleZ(z)` | 沿Z轴缩放元素（3D变换） | `transform: scaleZ(2);` |
+| `perspective(length)` | 为3D转换元素设置透视距离 | `transform: perspective(1000px);` |
+
+请注意，这些函数可以组合使用，以在单个`transform`属性中创建复杂的转换效果。例如：
+
+```css
+div {
+  transform: translate(50px, 100px) rotate(45deg) scale(1.5);
+}
+```
+
+在这个例子中，`div`元素首先沿X轴移动50像素，沿Y轴移动100像素，然后旋转45度，最后缩放1.5倍。这些转换按照它们在`transform`属性中出现的顺序依次应用。
+ -->

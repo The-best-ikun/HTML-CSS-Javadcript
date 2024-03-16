@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="utf-8">
+        <title>滚动字幕</title>
+    </head>
+    <!-- 这个好玩，以前好像从来没弄过这个东西 -->
+    <body>
+        <!-- 使用<marquee></marquee>可以实现文字和图片的跑马灯效果 -->
+
+        <!-- 先说说这个标签的部分属性：
+        behavior：指定跑马灯效果，可以为scroll（滚动）、slide（滑动），alternate（交替）
+        bgcolor：背景颜色
+        direction：移动方向，有上下左右
+        scrollamount：每次移动距离，取值为正整数
+        scrolldelay：移动的延迟时间，单位为毫秒
+        truespeed：跑马灯的速度，单位为毫秒
+        loop：循环次数，-1为无限循环
+        hspace：跑马灯效果区域左右的空白区域，属性值为正整数，不包括单位
+        vspace：上下空白区域，属性值为正整数，不包括单位
+        height：高度
+        width：宽度 -->
+
+        <marquee behavior="scroll" direction="right" scrollamount="10" scrolldelay="200" bgcolor="blue">
+            <font size="12" color="red" face="隶书">床前明月光</font>
+        </marquee>
+
+
+    </body>
+</html>

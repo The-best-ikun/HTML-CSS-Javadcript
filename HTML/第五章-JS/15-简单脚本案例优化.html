@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>案例优化</title>
+
+
+    <body>
+        <input type="button" value="测试" id="btn" >
+
+    </body>
+    <script>
+        var mybnt=document.getElementById("btn");
+
+        // 不要加括号，加括号表示需要函数的返回值
+        mybnt.onclick=myClick;
+        // mybnt.onclick=myClick();
+        
+        function myClick(){
+        
+            do{
+                username=prompt("何方神圣，报上名来");
+            }while(username=="");
+            // 只要用户输入不为空就行
+            alert(username+",久仰大名")
+            
+        }
+    </script>
+</html>

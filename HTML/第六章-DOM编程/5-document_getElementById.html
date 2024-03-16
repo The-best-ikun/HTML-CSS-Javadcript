@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>getElementById</title>
+
+
+    <body>
+        <!-- 在规范中，id一般是唯一的，所以可以试试id冲突的情况 -->
+        <!-- id冲突的话，一般要前面那一个 -->
+        <input type="text" id="myId" name="myId">
+        <div id="myId">
+            getElementById方法测试
+        </div>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var myId=document.getElementById("myId");
+            // alert不能解析出HTML标签，也不会输出空格
+            alert("获得的元素标记是"+"nodenName:"+myId.nodeName+
+            " nodeValue"+myId.nodeValue+"</br>"+"nodeType"+myId.nodeType)
+        }
+    </script>
+</html>

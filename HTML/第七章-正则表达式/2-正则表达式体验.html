@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>正则表达式体验</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var pattern=/\d+/g;//定义正则表达式
+            //   \d表示匹配数字  +表示一个或者多个字符  前后斜杆表示正则表达式的闭合两端，而g表示多次查找
+            //总体意思就是表示匹配数字出现，无论是1次的还是多次的都会被匹配
+
+            var str="18dhsj19sj0djs1o123"//随便写一串字符串，主要是为了迎合上面去匹配
+            var strArr=str.match(pattern);//开始执行操作
+            for(i=0;i<strArr.length;i++){
+                // 我不是记得这个会覆盖吗，我记错了？
+                document.write("匹配到的字符串有"+"<br/>")
+                document.write(strArr[i]+"<br/>")          
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>边框样式</title>
+        <!-- outset颜值最高 -->
+        <style>
+            p{
+                border:medium double rgb(0, 255, 128) ;
+            }
+            p.doubleSolid{
+                border-width:10px;
+                border-style: solid double;
+                border-top-color: chocolate;
+            }
+
+        .border-example {  
+            width: 100px;  
+            height: 100px;  
+            margin: 10px;  
+            display: inline-block;  
+            text-align: center;  
+            line-height: 100px; /* 垂直居中文字 */  
+        }  
+  
+        .none {  
+            border-style: none;
+        }
+        .hidden {  
+        border-style: hidden;  
+        }  
+  
+        .dotted {  
+            border-style: dotted;  
+        }  
+    
+        .dashed {  
+            border-style: dashed;  
+        }  
+    
+        .solid {  
+            border-style: solid;  
+        }  
+        .double {  
+        border-style: double;  
+        }  
+    
+        .groove {  
+            border-style: groove;  
+        }  
+    
+        .ridge {  
+            border-style: ridge;  
+        }  
+    
+        .inset {  
+            border-style: inset;  
+        }  
+        .outset {  
+        border-style: outset;  
+        }  
+    
+        /* 为所有示例添加统一的边框宽度和颜色 */  
+        .border-example {  
+            border-width: 10px;  
+            border-color: rgb(165, 82, 186);  
+        }  
+        </style>
+
+
+    <body>
+        <p>这是一段文字</p>
+        <p class="doubleSolid">这也是一段文字</p>
+
+        <div class="border-example none">none</div>  
+        <div class="border-example hidden">hidden</div>  
+        <div class="border-example dotted">dotted</div>  
+        <div class="border-example dashed">dashed</div>  
+        <div class="border-example solid">solid</div>  
+        <div class="border-example double">double</div>  
+        <div class="border-example groove">groove</div>  
+        <div class="border-example ridge">ridge</div>  
+        <div class="border-example inset">inset</div>  
+        <div class="border-example outset">outset</div>  
+
+    </body>
+</html>

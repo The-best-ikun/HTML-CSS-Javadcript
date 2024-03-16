@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Document对象属性</title>
+        <style>
+            body{
+                background-color: aqua;
+                img{
+                    background-size: contain;
+                }
+            }
+        </style>
+    <body>
+        <a herf="http://www.baidu.com">超链接1</a>
+        <a herf="http://www.jd.com">超链接2</a>
+        <img src="images/scenery_01.jpg" height="100" width="100">
+        <img src="images/scenery_02.jpg" height="100" width="100">
+        <img src="images/scenery_03.jpg" height="100" width="100">
+        <form action="#">
+        <input type="text" id="username">
+        <div id="disp"></div>
+        </form>
+    </body>
+    <script>
+        window.onload=function(){
+            myDisp=document.getElementById("disp");
+            // 这个title我也没怎么用过
+            // 应给就是DOM树里的标题
+            myDisp.innerHTML="当前文档的标题  "+document.title+"</br>";
+            myDisp.innerHTML+="当前文档的最后修改日期  "+document.lastModified+"</br>";
+            myDisp.innerHTML+="当前文档中包含"+document.links.length+"个超链接"+"</br>";
+            myDisp.innerHTML+="当前文档包含"+document.images.length+"个图片"+"</br>";
+            myDisp.innerHTML+="当前文档包含"+document.forms.length+"个表单"+"</br>";
+        }
+    </script>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>nameNode属性</title>
+    </head>
+
+        <!-- 返回标签名，不过将是全大写 -->
+    <body>
+        <div id="main"></div>
+        <div id="display"></div>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var myDiv=document.getElementById("main");
+            var display=document.getElementById("display");
+            display.innerHTML=myDiv.nodeName;
+        }
+    </script>
+</html>

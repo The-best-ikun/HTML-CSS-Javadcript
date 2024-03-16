@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>浮动</title>
+        <style>
+            *{
+                margin:opx;
+                padding:0px;
+            }
+
+            /* 这个html元素选中的意义是什么，它不已经是老大了吗 */
+            html,body{
+                width:100%;
+                height:100%;
+                background: rgb(69, 216, 140);
+            }
+            div.container{
+                width:80%;
+                height:100%;
+                background:rgb(81, 18, 190);
+                margin:0 auto;
+            }
+            div.header,div.footer{
+                color:whitesmoke;
+                background-color: black;
+                clear: left;/*清除左浮动*/
+                text-align:center;
+                height:80px;
+                line-height:80px;
+            }
+            div.middle{
+                background: pink;
+                height:500px;
+            }
+            div.left,div.content,div.right{
+                /* 三个浮动元素从左向右排列 */
+                float:left;
+                background:yellow;
+                height:100%;
+                width:70%;
+            }
+            div.left,div.right{
+                background: rgb(193, 15, 154);
+                width:15%;
+            }
+
+        </style>
+
+
+    <body>
+        <!-- 可以理解为比普通流的不在同一个图层中，普通流的块状元素会把浮动元素当成空气，浮动元素也可能会遮挡住其他元素
+        当浮动元素过多导致无法显现在一行中时，它会自动换行
+    注意：任何元素都可以设置浮动，当设置浮动后，元素都会生成块级框（我的理解是转化为行内块级元素一样） -->
+
+    <!-- float属性：
+    left：元素靠左浮动
+    right：元素向右浮动
+    none:不浮动
+    inherit:继承父元素的float属性
+    -->
+
+    <!-- clear属性
+        both：左右都不允许出现浮动元素（CSS通过增加外边距使元素换行实现的）
+
+
+     -->
+
+     <div class="container">
+        <div class="header">
+            <h1 class="header">经济与管理学院</h1>
+        </div>
+        <!-- 这个middle是指上中下，不是左中右 -->
+        <div class="middle">
+            <div class="left">
+                <P>Web程序设计基础————HTML、CSS、JS</P>
+            </div>
+            <div class="content">
+                <h2>CSS 样式表的应用</h2>
+                <p>http://www/w3cschool</p>
+                <p>快点把前端基础给过了</p>
+            </div>
+    
+            <div class="right">
+                <p>Web程序设计实验</p>
+            </div>
+        </div>
+
+        
+        <div class="footer">
+            某某某教育公司
+        </div>
+     </div>
+
+    </body>
+</html>

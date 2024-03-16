@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>多栏布局</title>
+        <style>
+            .header,.footer{
+                width: 500px;
+                height:100px;
+                background: pink;
+            }
+            .main{
+                width:500px;
+                height:300px;
+            }
+            .left,.right{
+                width:100px;
+                height:300px;
+            }
+            .content .top,.content .bot{
+                width:300px;
+                height:150px;
+            }
+
+            .left{
+                background: brown;
+                float:left;
+            }
+            .right{
+                background: blueviolet;
+                float:left;
+            }
+            .content .top{
+                background: orange;
+            }
+            .content .bot{
+                background: red;
+            }
+            .content{
+                float:left;
+            }
+            .right{
+                float:right;
+                background: black;
+            }
+        </style>
+
+
+    <body>
+        <div class="header"></div>
+        <div class="main">
+            <div class="left"></div>
+            <div class="content">
+                <div class="top"></div>
+                <div class="bot"></div>
+            </div>
+            <div class="right"></div>
+        </div>
+        <div class="footer"></div>
+    </body>
+</html>
