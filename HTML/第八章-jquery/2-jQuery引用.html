@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuerry引用</title>
+    </head>
+
+    <body>
+
+    </body>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        // $()是jQuery的缩写，可以在DOM中搜索与指定选择器匹配的元素，
+        // 并创建一个引用该元素的JQuery对象
+        // 通过jQuery对象$选择document元素，将document元素封装成jQuery对象，然后调用jQuery对象的ready方法，
+        // 将自己定义的匿名函数添加到document元素，该函数会在DOM结构上加载完毕后执行
+
+        // 下面第一行类似于window.onload
+        $(document).ready(function(e){
+            alert("hello jQuery");
+        })
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>jQuerry语法</title>
+    </head>
+
+    <body>
+        <pre>
+            
+            $(selector).action()
+
+            selector为选中的HTML元素
+            action通常是对元素的某些操作
+        </pre>
+
+        <p>单击我，文本则会消失</p>
+
+    </body>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(e){
+            $("p").click(function(){
+                $(this).hide();
+            })
+        })
+    </script>
+
+</html>

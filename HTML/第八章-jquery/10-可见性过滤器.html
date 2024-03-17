@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>可见性过滤器</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <h1>可见性过滤器</h1>
+        <input type="button"  id="button1"  value="改变div元素属性">
+        <input type="button"   id="button2" value="显示不可见元素">
+        <br/>
+        <br/>
+        <div id="myDiv">
+            hello world
+        </div>
+        <div style="display:none;">
+            隐藏元素
+        </div>
+
+    </body>
+    <script>
+        $("document").ready(function(){
+            $("#button1").click(function(){
+                $("div:visible").css('backgroundColor','red');
+            });
+            $("#button2").click(function(){
+                // $("div:hidden").css('display','inline');
+                $("div:hidden").show(1000);//估计1000是指毫秒值,也就是说1秒的显示动画
+
+            });
+        });
+    </script>
+</html>

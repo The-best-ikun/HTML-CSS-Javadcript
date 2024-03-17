@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>后代选择器</title>
+        <script src="jquery-3.7.1.js"></script>
+        <style>
+            .myClass{
+                width: 80%;
+                height: auto;
+                font-family: 楷体;
+                font-style: bold;
+                font-family:blue;
+                background-color: aquamarine;
+                border-radius: 10%;
+                margin-top: 10px;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <button>改变列表样式</button>
+        <div id="box">
+            <ul>
+                <li>足球</li>
+                <li>篮球</li>
+                <li>羽毛球</li>
+            </ul>
+        </div>
+
+    </body>
+    <script>
+        $("document").ready(function(){
+            $("button").click(function(){
+                $("#box li").addClass("myClass");//为li标签添加类名
+            })
+        })
+    </script>
+</html>

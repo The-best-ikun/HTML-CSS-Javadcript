@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>前后选择器</title>
+        <style>
+            span{
+                background-color: red;
+                color: aliceblue;
+                display: none;
+            }
+        </style>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <pre>
+            前后选择器可以选择某元素的下一个同级兄弟元素
+            用+号分隔
+            如$("#my").next("img")
+            或者$("#my+img")表示选择ID为my的元素的同级元素中的第一个img元素
+        </pre>
+        <div>
+            <label>用户名</label>
+            <input type="text" id="username">
+            <span></span>
+        </div>
+        <button>测试按钮</button>
+
+        
+
+    </body>
+    <script>
+        $("document").ready(function(){
+            $("button").click(function(){
+
+                if($("#username").val()==""){//这个可能是value吧
+                $("#username+span").html("用户名不能为空");
+                $("#username+span").css({"display":"inline"})
+
+            }else{
+                $("#username+span").css({"display":"none"})
+            }
+
+            })
+            
+        })
+    </script>
+</html>

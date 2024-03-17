@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>属性过滤器</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <a href="#" title="first">title-first</a>
+        <a href="#" >notitle-first</a>
+        <a href="#" title="second">title-second</a>
+        <a href="#" >notitle-second</a>
+        <a href="#" title="third">title-third</a>
+
+    </body>
+    <script>
+        $("documnent").ready(function(){
+            $("a[title]").css({
+                'color':'#FF9600',
+                'font-size':'12px',
+                'text-decoration':'none'
+            });
+        });
+    </script>
+</html>

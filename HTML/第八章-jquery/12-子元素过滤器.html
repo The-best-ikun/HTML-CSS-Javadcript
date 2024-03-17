@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>子元素过滤器</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <ul>
+            <li>足球</li>
+            <li>篮球</li>
+            <li>羽毛球</li>
+            <li>实心球</li>
+        </ul>
+
+    </body>
+    <script>
+        $("document").ready(function(){
+            // 通过相关指数获取子元素，但是even具体什么意思我还没弄懂，有奇数规则和偶数规则等等，这里你是奇数索引被改变样式
+            $("ul li:nth-child(even)").css("background","#FF9600");
+        });
+    </script>
+</html>

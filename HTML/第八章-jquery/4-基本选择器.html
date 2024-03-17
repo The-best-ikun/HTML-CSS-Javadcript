@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>基本选择器</title>
+    </head>
+
+    <body>
+        <pre>
+            基本选择器有两种，
+            一种是元素选择器，
+            一种是ID选择器
+
+
+            元素选择器就是直接用美元符号和括号选择元素就好
+            比如$("p")   $("input")
+
+            一种是ID选择器
+            也没啥新意
+            就是$("myId")
+
+
+        </pre>
+
+        <strong id="myId">这是一段有ID标签包裹的文字</strong>
+
+    </body>
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $("document").ready(function(){
+            $("#myId").click(function(){
+                $("#myId").html("覆盖之前的标签里面的内容");//不是追加。而是覆盖内容
+            })
+        })
+    </script>
+</html>

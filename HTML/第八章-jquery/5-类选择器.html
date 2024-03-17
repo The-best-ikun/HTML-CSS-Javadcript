@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>类选择器</title>
+        <script src="jquery-3.7.1.js"></script>
+        
+    </head>
+
+    <body>
+        <pre>
+            类选择器比较也是和CSS一样的
+
+            比如：
+            $(".myClass")
+            $("p.left")
+        </pre>
+
+        <button>增加每个列表项的索引值</button>
+        <ul>
+            <li class="myClass">足球</li>
+            <li class="myClass">篮球</li>
+            <li class="myClass">羽毛球</li>
+        </ul>
+
+    </body>
+    <script>
+        $("document").ready(function(){
+            $("button").click(function(){
+                $(".myClass").each(function(index,element){//获取到的是一组，所以用each、遍历
+
+                    //为他们加上索引值，再加上原来的文本
+                    $(this).html(index+"-"+$(this).text());
+                })
+            })
+        })
+    </script>
+</html>
