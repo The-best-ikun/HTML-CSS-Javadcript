@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>bind方法</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <p>这是一段文字</p>
+        <button>测试按钮</button>
+    </body>
+    <script>
+        // bind方法参数除了事件和处理事件的函数，还有一个可选参数(函数返回值)，如果返回为规定为false，它会取消事件的默认行为并阻止冒泡
+        $(document).ready(function(){
+            $("button").bind("click",function(){
+                $("p").slideToggle();//这个动画确实丝滑
+            })
+        })
+    </script>
+</html>

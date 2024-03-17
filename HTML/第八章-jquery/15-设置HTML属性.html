@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>设置HTML属性</title>
+        <script src="jquery-3.7.1.js"></script>
+        <!-- 案例效果就是div块显示一张图片，定时更改图片内容 -->
+        <style>
+            div{
+                margin: 10px;
+                width: 800px;
+                height: auto;
+            }
+            img{
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box">
+            <img src="images/scenery_01.jpg">
+        </div>
+    </body>
+    <script>
+        $(document).ready(function(){
+            var index=1;
+            setInterval(imgChange,3000);
+            function imgChange(){
+                index=(index+1)%5;
+                if(index==0){
+                    index=1;
+                }
+                $("#box img").attr("src","images/scenery_0"+index+".jpg");
+            }
+        })
+    </script>
+</html>

@@ -7,9 +7,23 @@
     </head>
 
     <body>
+        <pre>
+            var 对象名 = $("选择器").get(索引值)
+
+        </pre>
+        <ul>
+            <li>足球</li>
+            <li>篮球</li>
+            <li>手球</li>
+            <li>羽毛球</li>
+        </ul>
 
     </body>
     <script>
-        
+        var colorArr=new Array("blue","red","pink","green");
+        $("li").each(function(index){
+            this.style.color=colorArr[index];//其实这个有点神奇，我遍历时，索引值就会自动传入函数中
+        })
+
     </script>
 </html>

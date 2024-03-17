@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>阻止事件默认行为</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <p>右击网页空白处，将不会弹出右键菜单</p>
+    </body>
+    <script>
+        $("document").ready(function(){
+            $("document").bind("contextmenu",function(){
+                return (false);
+            })
+        })
+
+    </script>
+</html>

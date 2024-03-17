@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>邮件列表管理</title>
+        <script src="jquery-3.7.1.js"></script>
+
+    </head>
+
+    <body>
+        <div id="box">
+            <p>收件箱</p>
+            <!-- HTML5规范不建议把这几个非标准属性直接写到HTML里面 -->
+            <table width="400" border="1">
+                <tr>
+                    <td>状态</td>
+                    <td>发件人</td>
+                    <td>主题</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="select" value="select" > </td>
+                    <td>小明</td>
+                    <td>出来玩吗</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="select" value="select" ></td>
+                    <td>李华</td>
+                    <td>什么时候出去玩</td>
+                </tr>
+
+                <tr>
+                    <td><input type="checkbox" name="select" value="select"></td>
+                    <td>小明</td>
+                    <td>周六吧</td>
+                </tr>
+            </table>
+            <button id="selectBtn">全选</button>
+            <button id="selectCancel">取消全选</button>
+            <button id="noSelect">反选</button>
+            <button id="delBtn">删除</button>
+        </div>
+    </body>
+    <script>
+        $(function(){
+            $("#selectBtn").click(function(){
+                $("input[name=select]").prop("checked",true);
+            });
+            $("#selectCancel").click(function(){
+                $("input[name=select]").prop("checked",false);
+            });
+            $("#noSelect").click(function(){
+                // $("input[name=select]").prop("checked",true?false:true);这我自己的想法
+                $("input[name=select]").each(function(index,element){
+                    
+                        
+                        $(this).prop("checked",!$(this).prop("checked"))
+                    
+                });
+            });
+            $("#delBtn").click(function(){
+                $("input[name=select]").each(function(index,element){
+                    if($(this).prop("checked")){//遍历所有单选框，选中状态则进入删除操作
+                        //删除它的祖父级元素，也就是input.td>tr 删除一行
+                        $(this).parent().parent().remove();
+                    }
+                });
+            });
+        })
+    </script>
+</html>

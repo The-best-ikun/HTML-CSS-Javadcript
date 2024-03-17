@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>设置HTML元素内容</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <pre>
+            有三个比较常用的函数：
+            text:用于返回或设置元素的文本内容
+            html:用于返回或设置元素的内容，包括HTML元素
+            val:用于返回或者设置表单字段的值
+        </pre>
+        <input type="text" id="myInput">
+        <button>修改HTML元素内容</button>
+        <ul>
+            <li>足球</li>
+            <li>篮球</li>
+            <li>手球</li>
+            <li>羽毛球</li>
+        </ul>
+    </body>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                var newContent=$("#myInput").val();
+                $("ul li:first").html(newContent);
+                $("ul li:last").text(newContent);
+            })
+        })
+    </script>
+</html>

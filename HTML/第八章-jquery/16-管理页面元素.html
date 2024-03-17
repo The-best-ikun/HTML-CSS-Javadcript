@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>管理页面元素</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <button>DOM测试操作</button>
+        <p>这是第一个原始段落</p>
+
+
+        <p>这是第二个原始段落</p>
+        <p>这是第三个原始段落</p>
+        <p>这是第四个原始段落</p>
+
+    </body>
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                // eq表示的是在元素集合中根据索引取出对应元素
+                $("p").eq(0).after("<p>原始第一段落后面插入元素</p>");
+                $("p").eq(2).before("<p>原始第二段落前面插入元素</p>");//索引变为2是因为前面已经又插入了一个段落
+                $("p").eq(4).replaceWith("<p>原始第三段落内容被替换,原始第四段落被清空</p>");
+                $("p").eq(5).empty();
+
+            })
+        })
+    </script>
+</html>
