@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>delegate方法</title>
+        <script src="jquery-3.7.1.js"></script>
+    </head>
+
+    <body>
+        <ul>
+            <li>足球</li>
+        </ul>
+
+    </body>
+    <script>
+        // 该方法可以为它的子元素绑定事件，这样就不用循环去绑定事件了
+        $(document).ready(function(){
+            listArr=new Array("音乐","排球","羽毛球","篮球","游泳");
+            $("ul").delegate("li","click",function(){
+                $("this").delegate("<li>"+listArr[index]+"</li>");
+                index++;
+                index%=5;
+            })
+           
+        })
+
+    </script>
+</html>

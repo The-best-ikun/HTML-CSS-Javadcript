@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>停止动画</title>
+        <script src="jquery-3.7.1.js"></script>
+        <style>
+            #content{
+                background-color: blueviolet;
+                border-radius: 0.8rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <button>开始动画</button>
+        <button>stop()停止当前动画，继续下一动画</button>
+        
+        <button>stop(false,true)让当前动画立即进入到末状态，进入下一动画</button>
+        <button>stop(true,true)清楚所有动画，当前动画立即进入末状态</button>
+        <button>stop(true)停止所有动画</button>
+        <strong>stop的两个参数，前者是，后者是</strong>
+        <div id="content">容器</div>
+
+
+    </body>
+    <script>
+        $(document).ready(function(){
+            $("button").eq(0).click(function(){
+                $("#content").animate({backgroundColor:"red"},3000)
+                .animate({height:"150px"},3000).hide(2000)
+                .animate({width:"300px"},10000)
+                .animate({height:"show",width:"show",opacity:"show"},1000);//这个没见过
+            })
+
+            $("button").eq(1).click(function(){
+                $("#content").stop();
+            });
+
+            $("button").eq(2).click(function(){
+                $("#content").stop(false,true);
+            });
+
+            $("button").eq(3).click(function(){
+                $("#content").stop(false,true);
+            });
+            $("button").eq(4).click(function(){
+                $("#content").stop(false,true);
+            });
+
+
+        })
+    </script>
+</html>

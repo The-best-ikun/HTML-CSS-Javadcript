@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>低配动效列表</title>
+        <script src="jquery-3.7.1.js"></script>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            #box{
+                background-color: rgb(191, 171, 210);
+                width: 300px;
+                height: auto;
+            }
+            .subMenuItems a{
+                background-color: antiquewhite;
+                border-radius: 0.8rem;
+                text-align: center;
+                font-family: 隶书;
+                width:280px;
+                height: 50px;
+            }
+            a{
+                text-decoration: none;
+            }
+            .subMenuItem li{
+                background-color: rgb(174, 110, 26);
+                border-radius: 0.8rem;
+                text-align: center;
+                font-family: 隶书;
+                margin-top: 10px;
+                width:280px;
+                height: 20px;
+            }
+            #box ul li ul{
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="box">
+            <ul class="menu">
+
+                <!-- 这个嵌套把我看麻了 -->
+                <li class="menuItems">
+                    <a href="#" class="subMenuTitle">
+                        <b>▼</b>好友
+                    </a>
+                    <ul class="subMenuItem">
+                        <li><a href="#">好友1</a></li>
+                        <li><a href="#">好友2</a></li>
+                        <li><a href="#">好友3</a></li>
+                    </ul>
+                </li>
+
+                <li class="menuItems">
+                    <a href="#" class="subMenuTitle">
+                        <b>▶</b>朋友
+                    </a>
+                    <ul class="subMenuItem">
+                        <li><a href="#">朋友1</a></li>
+                        <li><a href="#">朋友2</a></li>
+                        <li><a href="#">朋友3</a></li>
+                    </ul>
+                </li>
+
+                <li class="menuItems">
+                    <a href="#" class="subMenuTitle">
+                        <b>▶</b>家人
+                    </a>
+                    <ul class="subMenuItem">
+                        <li><a href="#">家人1</a></li>
+                        <li><a href="#">家人2</a></li>
+                        <li><a href="#">家人3</a></li>
+                    </ul>
+                </li>
+
+                <li class="menuItems">
+                    <a href="#" class="subMenuTitle">
+                        <b>▶</b>同学
+                    </a>
+                    <ul class="subMenuItem">
+                        <li><a href="#">同学1</a></li>
+                        <li><a href="#">同学2</a></li>
+                        <li><a href="#">同学3</a></li>
+                    </ul>
+                </li>
+
+
+            </ul>
+        </div>
+
+    </body>
+
+
+    <script>
+        $(document).ready(function(){
+            $(".subMenuItem").eq(0).show();//默认展示好友列表分组
+            $(".subMenuTitle").click(function(){//点击分组标题触发
+                $(".subMenuItem").slideUp();//还不太理解,应该是能自动修改CSS隐藏属性，然后呈现动画
+                $(".subMenuTitle b").text("▶");//用menuItems来找应该也没问题，以后记得把命名弄的好懂点，嵌套加上无逻辑命名很难理清
+                if($(this).next().is(":hidden")){//判断是否隐藏
+                    $(this).next().slideDown();
+                    $(this).find("b").text("▼");
+                }
+            })
+        })
+    </script>
+</html>

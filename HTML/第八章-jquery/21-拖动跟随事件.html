@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>拖动跟随事件</title>
+        <script src="jquery-3.7.1.js"></script>
+        <!-- 这个代码有卡顿现象 -->
+        <style>
+            #myDiv{
+                background-color: red;
+                box-shadow: inset;
+                border-radius: 0.8rem;
+                width: 100px;
+                height: 100px;
+                position: absolute;
+            }
+            button{
+                float:right;
+                
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="myDiv"></div>
+        <button id="btn">移动色块</button>
+
+    </body>
+    <script>
+       $(function(){
+        $("#btn").click(function(){
+            $("#myDiv").mousedown(function(event){
+                var offset=$("#myDiv").offset();//获取div的位置
+                x1=event.clientX-offset.left;
+                y1=event.clientY-offset.top;
+                $("#myDiv").mousemove(function(event){
+                    // 鼠标移动，div块也随之移动
+                    $("#myDiv").css("left",(event.clientX-x1)+"px");
+                    $("#myDiv").css("top",(event.clientY-y1)+"px");
+                })
+            });
+            $("#myDiv").mouseup(function(event){
+                // 鼠标松开接触鼠标移动的绑定事件
+                $(this).unbind("mousemove");
+            });
+
+        })
+       })
+    </script>
+</html>

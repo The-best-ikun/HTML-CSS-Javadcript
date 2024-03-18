@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>显示与隐藏</title>
+        <script src="jquery-3.7.1.js"></script>
+        <style>
+            p{
+                width: 300px;
+                height: 200px;
+                background-color: aqua;
+                border-radius: 0.8rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <pre>show或者hide方法
+            这种方法有两个参数，
+            前者是速度-毫秒值，后者回调函数（可选参数），
+            这个回调函数会在规定时间内完函数
+        </pre>
+        <p>这是一段测试段落</p>
+        <button id="btn1">显示</button>
+        <button id="btn2">隐藏</button>
+
+    </body>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("p").show(2000);
+            });
+            $("#btn2").click(function(){
+                $("p").hide(2000);
+            })
+        })
+    </script>
+</html>

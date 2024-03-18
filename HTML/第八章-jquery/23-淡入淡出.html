@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>淡入淡出</title>
+        <script src="jquery-3.7.1.js"></script>
+        <style>
+            div{
+                width: 300px;
+                height: 200px;
+                background-color: aqua;
+                border-radius: 0.8rem; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <button id="btn1">显示</button>
+        <button id="btn2">隐藏</button>
+        <button id="btn3">合成</button>
+        <button id="btn4">半透明</button>
+        <div id="div1"></div>
+
+    </body>
+    <script>
+        $(document).ready(function(){
+            $("#btn1").click(function(){
+                $("#div1").fadeIn(1000);//渐变显示，参数为毫秒值
+            });
+            $("#btn2").click(function(){
+                $("#div1").fadeOut(1000);//渐变隐藏，参数为毫秒值
+            });
+            $("#btn3").click(function(){
+                $("#div1").fadeToggle(1000);//合成，也就是点一下是隐藏，再点一下就是显示,能够根据状态自适应
+            });
+            $("#btn4").click(function(){
+                $("#div1").fadeTo(1000,0.5);//渐变显示，参数为毫秒值，后者为透明度
+            });
+        });
+    </script>
+</html>
