@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>列偏移</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <style>
+            .row{
+                margin-bottom: 5px;
+            }
+            [class*="col-"]{
+                border: 2px black solid;
+                background-color: bisque;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">col-md-1</div>
+                <!-- offset类似于margin-left；可以让列右移，单位是列 -->
+                <div class="col-md-3 col-md-offset-5">offset-5</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 col-md-push-8">4</div>
+                <!-- 这个属性值可以让元素具有类似浮动效果，push是左，pull是右 -->
+                <div class="col-md-8 div col-md-pull-4">8</div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>栅格体验</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <style>
+            .row{
+                margin-bottom: 20px;
+            }
+            /* 这种选中好像没咋接触过 ，这里意思为选中class属性中带col-的标签*/
+            [class*="col-"]{
+                background-color: blueviolet;
+                color: aliceblue;
+                border:black 5px solid;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+                <div class="col-md-1">col-md-1</div>
+            </div>
+            <div class="row">
+                <div class="col-md-8">col-md-8</div>
+                <div class="col-md-4">col-md-4</div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">col-md-4</div>
+                <div class="col-md-4">col-md-4</div>
+                <div class="col-md-4">col-md-4</div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">col-md-6</div>
+                <div class="col-md-6">col-md-6</div>
+            </div>
+            
+        </div>
+    </body>
+    <script>
+        // 栅格系统共设计12行列，以此来进行响应式设计
+        // sm:平板或大屏手机
+        // xs：小屏手机或其他小屏显示设备
+        // md：桌面显示器
+        // lg：大屏桌面显示器
+    </script>
+</html>

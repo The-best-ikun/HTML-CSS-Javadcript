@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>响应式布局</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+
+
+        <!-- 大尺寸不太舒服 ，小尺寸不太对，应该哪里拼写错误了-->
+    </head>
+
+    <body>
+        <div class="container-fluid loginForm">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-offset-3">
+                    <div class="form-horizontal loginForm">
+                        <h3 class="form-signin-heading">用户登录</h3>
+                        <!-- 输入框第一组 -->
+                        <div class="form-group">
+                            <!-- 邮箱 -->
+                            <label for="email" class="col-sm-2 col-xs-3 control-label">邮箱</label>
+                            <div class="col-sm-8 col-xs-8">
+                                <input type="text" class="form-control"  name="email" placeholder="请输入邮箱">
+                                <!-- 这是个啥？，应该是利用到了CSS文件 -->
+                                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+
+
+                            </div>
+                        </div>
+
+                        <!-- 输入框第二组 -->
+                        <div class="form-group">
+                            <!-- 密码 -->
+                            <label for="password" class="col-sm-2 col-xs-3 control-label">密码</label>
+                            <div class="col-sm-8 col-xs-8">
+                                <input type="text" class="form-control"  name="password" placeholder="请输入密码">
+                                <!-- 这是个啥？，应该是利用到了CSS文件 -->
+                                <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
+
+
+                            </div>
+                        </div>
+
+                        <!-- 选项第三组 -->
+                        <div class="form-group">
+                            <!-- 其他选项 -->
+                            
+                            <div class="col-sm-offset-2 col-sm-4 col-xs-4">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox">记住密码
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-xs-4 control-label">
+                                <!-- 这里还可以写一个网页 -->
+                                <a href="resetPwd.html " id="forget">忘记密码</a>
+                            </div>
+                        </div>
+                        <!-- 按钮第四组 -->
+                        <div class="form-group">
+                            <div class="col-sm-12 col-lg-12">
+                                <button type="button" class="btn btn-primary btn-block" id="submit">
+                                    登录
+                                </button>
+                            </div> 
+                        </div>
+
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+    </script>
+</html>

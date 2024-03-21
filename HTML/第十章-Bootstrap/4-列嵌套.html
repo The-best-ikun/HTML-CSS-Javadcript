@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>列嵌套</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <style>
+            .content{
+                border: 2px black solid;
+                
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- 巨幕效果 -->
+            <div class="jumbotron">
+                <h1>Hello,Bootstrap</h1>
+                <p>栅格系统通过行列组合优化布局结构</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 content">
+                    <h3>left</h3>
+                    <p>Bootstrap是一个开源的前端框架，由Twitter的设计师和开发者创建并维护。
+                        它包含了HTML和CSS的设计模板，
+                        以及可选的JavaScript扩展。</p>
+                    <p>good</p>
+                </div>
+                
+                <div class="col-sm-6">
+                    <!-- 为什么我的列嵌套无法使嵌套列在同一行 -->
+                    
+                    <div class="row">
+                        
+                        <!-- 这里开始列嵌套 -->
+                        <div class="col-sm-3 content">
+                            <h3>right-left</h3>
+                            <p>Bootstrap的主要用途是帮助开发者快速构建响应式、移动设备优先的网站和Web应用程序。</p>
+                            <p>very good</p>
+                        </div>
+                    
+                        <div class="col-sm-3 content">
+                            <h3>right-right</h3>
+                            <p>Bootstrap的主要用途是帮助开发者快速构建响应式、移动设备优先的网站和Web应用程序。</p>
+                            <p>very good</p>
+
+                        </div>
+                    </div>
+                
+                </div>
+                
+
+                
+            </div>
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>
