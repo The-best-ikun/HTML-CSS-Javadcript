@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-on指令</title>
+        <script src="vue.js"></script>
+        <!-- 这个是绑定事件用的，语法糖为@，不过书中好像忘记介绍事件解绑定了，自己去了解一下
+        还有绑定多个事件，事件修饰符等，也比较好用 -->
+    </head>
+
+    <body>
+        <div id="app">
+            <p v-if="show">hello vue 事件</p>
+            <button v-on:click="handleClick">隐藏与显示</button>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                show:true
+            },
+            methods:{
+                handleClick:function(){
+                    // 注意这个this指向，现在还好，以后到组件时会比较绕
+                    this.show=!this.show;
+                }
+            }
+        })
+    </script>
+</html>

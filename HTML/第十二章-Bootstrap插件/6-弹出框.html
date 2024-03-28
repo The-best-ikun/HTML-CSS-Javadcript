@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>弹出框</title>
+        <!-- 弹出框就是悬停时给你一种漫画里聊天框的效果，悬停即可触发，点击有弹出框属性的元素就会使聊天框保持显现状态 -->
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container" style="padding:100px 50px 10px">
+            <button type="button" class="btn btn-primary" title="Popover title"
+            data-container="body" data-toggle="popover" data-placement="top"
+            data-content="这里是填写内容的地方"
+            data-trigger="click hover">顶部弹出框</button>
+
+            <button type="button" class="btn btn-warning" title="Popover title"
+            data-container="body" data-toggle="popover" data-placement="right"
+            data-content="这里是填写内容的地方"
+            data-trigger="click hover">右边弹出框</button>
+
+            <button type="button" class="btn btn-warning" title="Popover title"
+            data-container="body" data-toggle="popover" data-placement="bottom"
+            data-content="这里是填写内容的地方"
+            data-trigger="click hover">底部弹出框</button>
+
+        </div>
+
+        
+
+    </body>
+    <script>
+        // 需要自己写一点js代码激活它
+        $(function(){
+            $("[data-toggle='popover']").popover();
+        })
+    </script>
+</html>

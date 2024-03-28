@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>选项卡</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+                
+                <ul id="myTab" class="nav nav-tabs">
+                    <!-- <li><strong class="nav-brand" data-toggle="tab">前端技术</strong></li> -->
+                    <!-- 现在是为元素添加交互属性，属性值是tab——选项卡 -->
+                    <li class="active"><a href="#bootstrap" data-toggle="tab">Bootstrap</a></li>
+                    <li ><a href="#vue" data-toggle="tab">Vue</a></li>
+                    <li ><a href="#react" data-toggle="tab">React</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">前端基础
+                        <span class="caret"></span>
+                        </a>
+                        <!-- role一般是增强可访问性 -->
+                        <ul class="dropdown-menu" role="menu">
+                            <!-- tabindex="-1"可以让tab键不会导航到这个元素 -->
+                            <li><a href="#d_html" tabindex="-1" data-toggle="tab">HTML</a></li>
+                            <li><a href="#d_css" tabindex="-1" data-toggle="tab">CSS</a></li>
+                            <li><a href="#d_js" tabindex="-1" data-toggle="tab">JS</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <!-- fade是渐入过渡效果，in active是显示 -->
+                    <div class="tab-pane fade in active" id="bootstrap">
+                        <p>你的网站和应用能在 Bootstrap 的帮助下通过同一份源码快速、
+                            有效地适配手机、平板和 PC 设备，
+                            这一切都是 CSS 媒体查询（Media Query）的功劳。</p>
+                    </div>
+                    <div class="tab-pane fade" id="vue">
+                        <p>渐进式
+                            JavaScript 框架
+                            易学易用，性能出色，适用场景丰富的 Web 前端框架。</p>
+                    </div>
+                    <div class="tab-pane fade" id="react">
+                        <p>用组件创建用户界面
+                            React 让你可以通过组件来构建用户界面。
+                            你可以创建像 Thumbnail、LikeButton 和 Video 这样的组件。
+                            然后将它们组合成整个应用程序。</p>
+                    </div>
+                    <div class="tab-pane fade" id="d_html">
+                        <h1>HTML</h1>
+                    </div>
+                    <div class="tab-pane fade" id="d_css">
+                        <h1>CSS</h1>
+                    </div>
+                    <div class="tab-pane fade" id="d_js">
+                        <h1>JavaScript</h1>
+                    </div>
+                </div>
+            
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>全局过滤器</title>
+        <script src="vue.js"></script>
+    </head>
+    <!-- 这个程序有点缺陷，不过影响不大 -->
+    <body>
+        <div id="app">
+            <div id="computed_props">
+                <input type="text" v-model="num" placeholder="数字">
+                <br/>
+                <input type="text" v-model="str" placeholder="字母">
+                <p id="info"></p>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#computed_props",
+            data:{
+                num:0,
+                str:'A'
+            },
+            watch:{
+                num:function(val){
+                    this.num=val;
+                    this.str=String.fromCharCode(65+parseInt(val%26));
+                }
+            } 
+        })
+
+        // 带美元符号的方法很有用，以后会介绍
+        vm.$watch('num',function(newValue,oldValue){
+            document.getElementById("info").innerHTML="修改前值是"+ oldValue +"   修改后的Value值"+newValue;
+        })
+    </script>
+</html>

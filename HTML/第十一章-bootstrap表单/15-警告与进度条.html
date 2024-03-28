@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>警告与进度条</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="progress progress-striped acrive">
+                <div class="progress-bar progress-bar-success" role="progressbar"
+                aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                style="width:40%">
+                <span sr-only>
+                    40%完成
+                </span>
+                </div>
+            </div>
+            <div class="alert alert-warning alert-dismissable" role="alert">
+                <!-- aria指的是Accessible Rich Internet Application,无障碍访问技术规范 -->
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;
+
+                    </span>
+                </button>
+                <strong>您当前只完成了百分之40</strong>
+                <a href="#" class="alert-link">取消</a>
+            </div>
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>钩子函数体验</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <!-- .a.b：这是一个修饰符链，
+        它包含了一个或多个修饰符，
+        用点号分隔。修饰符可以添加到指令中，
+        以改变指令的行为。在这个例子中，
+        a 和 b 是修饰符
+        说实话我还没搞懂-->
+        <div id="app" v-runoob:hello.a.b="message">
+            
+        </div>
+
+    </body>
+    <script>
+        Vue.directive('runoob',{
+            bind:function(el,binding,vnode){
+                // JSON.stringify 是 JavaScript 中一个非常有用的方法，
+                //用于将一个 JavaScript 对象或值转换为 JSON 字符串。
+                //这个方法可以方便地将数据结构转换为字符串形式，
+                //便于存储或通过网络发送
+                
+                // 太六了，竟然还能够将变量值赋值成一个函数
+                var s=JSON.stringify;
+                el.innerHTML=
+                '钩子函数bind中各参数的取值：<br>'+
+                '<b>name</b>&nbsp;'+s(binding.name)+"<br>"+
+                '<b>value</b>&nbsp;'+s(binding.value)+"<br>"+
+                '<b>expression</b>&nbsp;'+s(binding.expression)+"<br>"+
+                '<b>arguments</b>&nbsp;'+s(binding.arg)+"<br>"+
+                '<b>modifiers</b>&nbsp;'+s(binding.modifiers)+"<br>"+
+                '<b>vnode keys</b>&nbsp;'+Object.keys(vnode).join(',')+"<br>"
+
+            }
+        })
+
+        new Vue({
+            el:"#app",
+            data:{
+                message:"hello vue"
+            }
+        })
+    </script>
+</html>

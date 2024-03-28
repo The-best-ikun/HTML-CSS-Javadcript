@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Animate.css的引用</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="button" value="点我点我" @click="flag=!flag"/>
+            <transition 
+            enter-active-class="animated bounceIn"
+            leave-active-class="animated bounceOut"
+            :duration="{ enter: 600, leave: 400 }">
+            
+            <div v-if="flag" style="background-color: aqua; width: 300px; border-radius: 5px;"><h1>{{msg}}</h1></div>
+
+            </transition>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:"上课好无聊",
+                flag:false
+            }
+        })
+    </script>
+</html>

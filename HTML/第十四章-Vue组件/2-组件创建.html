@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>组件创建</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- 组件标签名好像不太适合小驼峰命名，之前写了一次，浏览器把标签名自动改成小写了，后面解析不出来 -->
+            <mycom></mycom>
+        </div>
+
+        <!-- Vue的控制区域外 -->
+        <template id="temp">
+            <h3>利用模板创建组件</h3>
+        </template>
+
+    </body>
+    <script>
+        // 注册组件
+        Vue.component('mycom',{
+            template:"#temp"
+        });
+        var vm=new Vue({
+            el:"#app"
+        })
+    </script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>vue体验</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <!-- MVVM的View层 -->
+        <div id="test">
+            <p>{{msg}}</p>
+        </div>
+
+    </body>
+    <!-- MVVM的viewmodel层 -->
+    <script>
+        // vue的实例对象
+        var vm=new Vue({
+            // 绑定指定元素
+            el:"#test",
+
+            // model层
+            data:{
+                msg:'hello world'
+            }
+
+        })
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-if和v-else</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <p v-if="seen">看见了</p>
+            <p v-else>没看见</p>
+            <!-- <template> 标签用作容器，用于在页面加载时对用户隐藏一些 HTML 内容。 -->
+            <template v-if="ok">
+                <h1>vue</h1>
+                <p>有条件渲染</p>
+            </template>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                seen:true,
+                ok:true
+            }
+        })
+    </script>
+</html>

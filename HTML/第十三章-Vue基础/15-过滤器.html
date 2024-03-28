@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>过滤器</title>
+        <!-- 和computed属性有些许的不同，它不会修改后台数据，只是修改呈现方式 -->
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="text" v-model="content" @change="changeEvent">
+            <h3>{{viewContent | changeCaptalLetter}}</h3>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                viewContent:'',
+                content:''
+            },
+            methods:{
+                changeEvent:function(){
+                    this.viewContent=this.content;
+                }
+            },
+            // 定义一个名为changeCaptalLetter的函数，它接受一个参数value
+            filters:{
+                // 有个问题，为什么过滤器那里没传入参数，还是能得到value的具体值
+                changeCaptalLetter(value){//value是输入框的内容
+                    // 如果value存在（不为空）
+                    if(value){
+                        // 将value转换为字符串（如果它还不是字符串），并进行分割操作，以空格为分隔符
+                        let str = value.toString();
+                        let newStr = str.split(' ').map(ele => {
+                            // 对分割后的每个元素（单词）执行操作
+                            // 使用charAt(0).toUpperCase()将每个单词的首字母转换为大写
+                            // 使用slice(1)获取首字母之后的字符串
+                            return ele.charAt(0).toUpperCase() + ele.slice(1);
+                        });
+                        // 将转换后的单词数组通过join('')方法连接成一个没有空格的字符串返回
+                        return newStr.join('');
+                    }
+                }
+            }
+
+        })
+    </script>
+</html>

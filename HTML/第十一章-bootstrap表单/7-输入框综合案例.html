@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>输入框综合案例</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container" style="padding:30px 100px 10px" >
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" aira-label="...">
+                </span>
+                <input type="text" class="form-control" placeholder="AAA..." aria-label="...">
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="radio"  airia-label="...">
+                </span>
+                <input type="text" class="form-control" aria-label="...">
+            </div>
+            <br>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for ...">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">搜索</button>
+                </span>
+            </div>
+            <br>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for ...">
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" type="button">
+                    <span class="glyphicon glyphicon-search"></span>
+                </span>
+            </div>
+            <br>
+
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        下拉菜单
+                        <span class="caret"></span>
+                    </button>
+                    
+                    <ul class="dropdown-menu">
+                        <li><a= href="#">功能一</a></li>
+                        <li><a= href="#">功能二</a></li>
+                        <li><a= href="#">其他</a></li>
+                        <li class="divider"></li>
+                        <li><a= href="#">分隔线下方</a></li>
+                    </ul>
+                </div>
+                <input type="text" class="form-control">
+            </div>
+
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>

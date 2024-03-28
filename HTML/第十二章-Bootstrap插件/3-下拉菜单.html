@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>下拉菜单</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- 常用nav-
+            nav-tabs：用于创建标签式导航（tabbed navigation）。它允许用户通过点击不同的标签来切换显示的内容区域。
+
+            nav-pills：用于创建胶囊式导航（pill-shaped navigation）。与 nav-tabs 类似，但它提供的是胶囊形状的按钮样式，而不是标签样式。
+
+            nav-link：用于定义导航链接。无论是 nav-tabs 还是 nav-pills，每个导航项通常都包含一个 nav-link。
+
+            nav-item：用于定义导航项。它通常包裹 nav-link，提供导航项的结构和样式。
+
+            navbar：用于创建页面顶部的导航栏。它通常包含品牌标识、链接、按钮等元素，并可以通过不同的类属性（如 navbar-default、navbar-inverse 等）来定制样式。
+
+            navbar-brand：在 navbar 中定义品牌标识或名称。
+
+            navbar-nav：在 navbar 中定义导航链接的容器。
+
+            navbar-toggler：用于创建导航栏的折叠按钮，通常用于移动设备上折叠和展开导航链接。 -->
+            <ul class="nav nav-tabs">
+                <li><a href="#">HTML</a> </li>
+                <li><a href="#">CSS</a> </li>
+                <li><a href="#">JS</a> </li>
+                <li><a href="#">Vue</a> </li>
+                <!-- 添加data-toggle可以为该元素添加交互属性，这里交互的是下拉菜单 -->
+
+                <li><a href="#"  data-toggle="dropdown">其他
+                    <span class="caret"></span>
+                </a> 
+                <!-- 那串长长的是无障碍标签 -->
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li> <a href="#"> C++</a></li>
+                        <li><a href="#">java</a></li>
+                        <li><a href="#">python</a></li>
+                        <li><a href="#">lua</a></li>
+                        <li><a href="#">go</a></li>
+                    </ul>
+                </li>
+            </ul>
+            
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>

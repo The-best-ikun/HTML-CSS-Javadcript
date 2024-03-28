@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>综合案例</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <div v-if="list.length">
+                <!-- 遍历购物车列表 -->
+                <table border="3" width="600px" >
+                    <thead>
+                        <tr>
+                            <!-- 第一列不需要表头 -->
+                            <th></th>
+                            <th>名称</th>
+                            <th>价格</th>
+                            <th>数量</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item,index) in list" style="background-color: aqua;">
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <!-- 添加一个过滤器，方便显示价格 -->
+                            <td>{{item.price|showPrice}}</td>
+                            <td>
+                                <!-- 设置点击事件，同时数量小于等于0时，禁用减号按钮 -->
+                                <!-- 我还是没搞懂，它是怎么实现自动传参的 -->
+                                <button @click="decrement(index)" v-bind:disabled="item.count<=0">-</button>
+                                {{item.count}}
+                                <button @click="increment(index)" v-bind:disabled="item.count>=99">+</button>
+                            </td>
+                            <td><button @click="removeHandle(index)">移除</button></td>
+                        </tr>
+                        <tr>
+                            <td>总价</td>
+                            <td colspan="4" align="right">{{totalPrice|showPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div v-else>
+                购物车列表为空
+            </div>
+
+
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                list:[
+                    {id:1001,name:"华为手机",price:5999,count:1 },
+                    {id:1002,name:"小米手机",price:3999,count:2 },
+                    {id:1001,name:"苹果手机",price:9999,count:10 },
+                    {id:1001,name:"中兴手机",price:4999,count:3 }
+            ]
+            },
+            methods:{
+                decrement(index){
+                    this.list[index].count--;
+                },
+                increment(index){
+                    this.list[index].count++;
+                },
+                removeHandle(index){
+                    // 这玩意增删都行，前者是删除的索引，后者是删除的数量
+                    this.list.splice(index,1)
+                    for(let i=0;i<this.list.length;i++){
+                        this.list[i].id=i+1;//修改序号
+                    }
+                }
+            },
+            filters:{
+                showPrice(price){
+                    return "￥"+price.toFixed(2);//加两位小数
+                }
+            },
+            computed:{
+                totalPrice:function(){
+                    var totalPrice=0
+                    for(let i=0;i<this.list.length;i++){
+                        totalPrice+=this.list[i].price*this.list[i].count;
+                    }
+                    return totalPrice;
+                }
+            }
+        })
+    </script>
+</html>

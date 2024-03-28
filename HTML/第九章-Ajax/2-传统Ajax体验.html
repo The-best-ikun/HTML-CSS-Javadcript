@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>传统Ajax体验</title>
+
+    </head>
+
+    <body>
+        <form action="" method="get"  onsubmit="return false;">
+            <input type="text" id="username" name="username">
+            <span id="display"></span>
+            <br>
+            <input type="submit" value="测试">
+
+        </form>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var  myUser=document.getElementById("username");
+            // 失去焦点事件
+            myUser.onblur=function(){
+                var xmlHttp;
+                if(window.XMLHttpRequest){
+                    // 新版获取对象方法
+                    xmlHttp=new XMLHttpRequest();
+                }else{
+                    // 老版获取对象方法
+                    xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                xmlHttp.onreadystatechange=function(){
+                    if(xmlHttp.readyState == 4){
+                        // status=200表示正确返回了数据
+                        if(xmlHttp.status == 200){
+                            var message=xmlHttp.responseText;
+                            document.getElementById("display").innerHTML=message;
+                        }else {  
+                            // 处理错误情况  
+                            document.getElementById("display").innerHTML = "请求失败: " + xmlHttp.status;  
+                        }  
+                    }
+                }
+
+
+                // xmlHttp.open("Get","ajaxServer.jsp?username="+ encodeURIComponent(myUser.value),true);
+                xmlHttp.open("Get","2-ajaxServer.jsp",true);
+            
+            
+                xmlHttp.send();
+            }
+        }
+    </script>
+</html>

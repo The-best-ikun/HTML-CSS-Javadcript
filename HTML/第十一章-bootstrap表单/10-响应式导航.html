@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>响应式导航</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <nav class="navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <!-- 小屏时，会出现三横样式，点击可以隐藏导航条上内容 -->
+                    <button class="navbar-toggle" data-toggle="collapse" data-target="#menu"> 
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">上海电力大学</a>
+                </div>
+                <div id="menu" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">学校概况</a></li>
+                        <li><a href="#">人才培养</a></li>
+                        <li><a href="#">学校图书馆</a></li>
+                        <li><a href="#">实验室</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                官方联系方式<span class="caret"></span>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">电话：110</a></li>
+                                    <li><a href="#">微信：123</a></li>
+                                </ul>
+    
+                            </a>
+                            <!-- 下拉菜单的子菜单项，一定要放在li标签里面，必须和下拉菜单触发点在同一包裹标签范围内 -->
+                            
+                        </li>
+                            
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+    </body>
+    <script>
+    </script>
+</html>

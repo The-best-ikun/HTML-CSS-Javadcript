@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-for遍历键值对对象</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <table border="1" width="600px" align="center">
+                <caption><strong>后端语言学习书籍</strong></caption>
+                <tr>
+                    <td>语言方向</td>
+                    <td>推荐书籍</td>
+                </tr>
+                <tr  style="background-color: aqua;" v-for="(value,key) in books">
+                    <td>{{key}}</td>
+                    <td>{{value}}</td>
+
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                books: {
+                    'java': 'java实战经典',
+                    'c++': 'c++实战经典',
+                    'go': 'go实战经典'
+                }
+            }
+        })
+    </script>
+</html>

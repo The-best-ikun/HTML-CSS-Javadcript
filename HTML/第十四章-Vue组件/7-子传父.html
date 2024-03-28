@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>子传父</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            name数据：{{dataFromChild.name}}
+            <br>
+            age数据：{{dataFromChild.age}}
+            <br>
+            {{numFromChild}}
+            <com2 v-on:func="show"></com2>
+        </div>
+        <template id="temp">
+            <div>
+                <h3>子组件</h3>
+                <input type="button" value="子组件按钮，调用符组件show方法" @click="myClick">
+            </div>
+        </template>
+    </body>
+    <script>
+        // 创建组件
+        var com2={
+            template:"#temp",
+            data(){
+                return{
+                    msg:{
+                        name:"儿子",
+                        age:18
+                    }
+                }
+            },
+            methods:{
+                myClick(){
+                    // $emit是触发，触发一个父类的func事件，后面两个数据都传给了父组件
+                    this.$emit('func',123,this.msg)
+                }
+            }
+        }
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                dataFromChild:{name:"老子",age:56}
+            },
+            methods:{
+                // 吐槽一下这样的传参机制，我一时真的无法适应
+                // $emit触发func事件，func事件绑定的函数是show，show函数得到$emit的两个数据，1个是123,1个是子组件data的msg对象
+                show:function(data1,data2){
+                    // 这里把传入的数据赋值给父组件数据
+                    this.numFromChild=data1;
+                    this.dataFromChild=data2;
+                }
+            },
+            components:{
+                // 私有组件注册
+                com2
+            }
+        })
+       
+        
+
+
+    </script>
+</html>

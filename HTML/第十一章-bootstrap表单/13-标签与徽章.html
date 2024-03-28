@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>标签与徽章</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <h1>标签颜色种类</h1>
+        <span class="label label-default">Default标签</span>
+        <span class="label label-primary">Primary标签</span>
+        <span class="label label-success">Success标签</span>
+        <span class="label label-info">Info标签</span>
+        <span class="label label-warning">Warning标签</span>
+        <span class="label label-danger">Danger标签</span>
+        <hr>
+        <!-- 为什么我弄不出标签颜色 -->
+        <h1>胶囊式导航列表</h1>
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#">主页<span class="badge badge-warning">42</span></a></li>
+            <li><a href="#">消息<span class="badge badge-danger">99</span></a></li>
+            <li><a href="#">好友<span class="badge badge-success">11</span></a></li>
+
+        </ul>
+
+        <hr>
+        <h1>列表导航中徽章激活状态</h1>
+        <ul class="nav nav-pills nav-stacked" role="tablist">
+            <li role="presentation" class="active"><a href="#">主页 <span class="badge">42</span></a></li>
+            <li role="presentation"><a href="#">消息</a></li>
+            <!-- 这个pull right会是徽章在元素最右侧，不添加的话，徽章则会跟在文本后边 -->
+            <li role="presentation"><a href="#">好友 <span class="badge pull-right">3</span></a></li>
+          </ul>
+
+    </body>
+    <script>
+    </script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>计算属性与计算方法</title>
+        <script src="vue.js"></script>
+    </head>
+    <!-- 计算属性具有缓存的特点，系统初始运行会调用一次，之后一般是计算结果发生变化时，它才会调用 -->
+    <!-- 计算方法初始也会调用一次，之后一般需要触发器去触发 -->
+    <!-- 一般是遍历大数组或者做大量计算时，更加推荐使用计算属性 -->
+    <body>
+        <div id="app">
+            长度：<input v-model="length" type="text"><br>
+            宽度：<input v-model="width" type="text"><br>
+            高度：<input v-model="height" type="text"><br>
+            计算属性得出体积是：<strong>{{V1}}</strong>
+            <br>
+            计算方法<button id="btn" @click="getV()">点我计算</button>
+            <br>
+            得出体积是：<strong>{{V2}}</strong>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                length:'',
+                width:'',
+                height:'',
+                V2:''
+            },
+            computed:{
+                V1:function(){
+                    let v=0;
+                    v=this.width*this.height*this.length;
+                    return v;
+                }
+            },
+            methods:{
+                getV:function(){
+                    this.V2=this.width*this.height*this.length;
+                }
+            }
+        })
+    </script>
+</html>

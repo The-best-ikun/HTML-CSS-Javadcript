@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>全局自定义指令</title>
+        <script src="vue.js"></script>
+        <style>
+            input{
+                border-radius: 5px;
+                background-color: antiquewhite;
+                width:300px;
+                margin:30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <p>页面载入时，第二个input元素自动获取焦点</p>
+            <input>
+            <br>
+            <input v-focus>
+            <br>
+            <input>
+        </div>
+
+    </body>
+    <script>
+        // 注册全局指令，然后用恰当的钩子函数来决定自定义指令执行的时间
+        Vue.directive("focus",{
+            // 元素插入DOM树的父节点
+            inserted:function(el){
+                el.focus();
+                el.value="获得焦点"
+            }
+        })
+        new Vue({
+            el:"#app"
+        })
+    </script>
+</html>

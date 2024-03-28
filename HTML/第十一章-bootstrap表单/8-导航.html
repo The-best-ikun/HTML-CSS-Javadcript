@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>导航</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container-fulid">
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">上海电力大学</a>
+                </div>
+           
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">
+                        首页<span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li><a href="#">机构设置</a></li>
+                    <li><a href="#">学科建设</a></li>
+                    <li><a href="#">人才培养</a></li>
+                    <li><a href="#">教学计划</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                            友情链接<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="http://www.baidu.com">找百度</a></li>
+                            <li class="divider"></li>
+                            <li><a href="http://www.jd.com">找京东</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="search">
+                    </div>
+                    <button type="submit" class="btn btn-default">提交</button>
+                </form>
+                <ul class="nav navbar-nav nav-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user"></span>
+                            注册
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-ok-sign"></span>
+                            登录
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </body>
+    <script>
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>vue-bind指令</title>
+        <script src="vue.js"></script>
+        <!-- 注意一下，Vue的报错好像比较严苛，只要里面的代码有一丢丢错误，一些没错误的东西也会被影响，无法渲染在页面上 -->
+        <style>
+            .text-danger{
+                padding: auto;
+                
+            }
+            .static{
+                height: 100px;
+                background-color: rgb(27, 135, 135);
+                margin-top: 30px;
+            }
+            
+        </style>
+    </head>
+    <!-- v-bind指令可以进行数据单向绑定，也就是视图层数据会绑定model层数据，但是改变视图层数据，并不会改变model层的数据 -->
+    <body>
+        <div id="app">
+            <!-- 可以用语法糖，一个冒号在前面就行 -->
+            <img v-bind:src="path" title="图片">
+            <!-- 可以绑定元素类属性，有三种主要绑定方式 -->
+            <div class="static" v-bind:class="{active: isActive, 'text-danger': hasError}"></div>
+            <!-- 数据对象绑定法 -->
+            <div class="static" v-bind:class="classObject"></div>
+            <div class="static" v-bind:class="[activeClass,errorClass]"></div>
+            <div class="static" v-bind:class="[isActive?activeClass: ' ']"></div>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                path:"./images/scenery_01.jpg",
+                isActive:true,
+                hasError:false,
+                classObject:{
+                    active:true ,
+                    'text-danger':false,//好像是类名定义也应该用字符串
+                },
+                activeClass:'active',
+                errorClass:'text-danger',
+                
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>私有组件</title>
+        <script src="vue.js"></script>
+        <!-- 全局组件和私有组件的区别好像就在创建位置而已，以后用到可能才清楚 -->
+    </head>
+
+    <body>
+        <div id="app">
+            <mycom></mycom>
+        </div>
+        <div id="temp">
+            <h3>私有组件</h3>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            components:{
+                mycom:{
+                    template:"#temp"
+                }
+            }
+        })
+    </script>
+</html>

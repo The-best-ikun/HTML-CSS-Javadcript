@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>插值表达式</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <p>
+                <!-- 字符串类型常用表达式 -->
+                {{str}}
+                {{str.length}}
+                {{str.split('11').reverse().join('aa')}}
+
+            </p>
+            <p>
+                <!-- 数值 -->
+                {{num}}
+                {{num+num1}}
+                {{num>num1}}
+                <!-- 这个是加入小数点精确值 -->
+                {{num.toFixed(2)}}
+            </p>
+
+            <p>
+                <!-- 数组 -->
+                {{arr}}
+                {{arr[3]}}
+            </p>
+            <p>
+                <!-- 对象 -->
+                {{obj}}
+                {{obj.name}}
+            </p>
+            <p>
+                <!-- 三目表达式 -->
+                {{num.num1?'是':'否'}}
+            </p>
+            <p>
+                <span v-html="link"></span>
+            </p>
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                str:'helllo',
+                num:1,
+                num1:2,
+                arr:[1,2,3,4],
+                obj:{
+                    name:'李四',
+                    age:20
+                },
+                link:'<a href="http://www.baidu.com">百度</a>'
+
+            }
+        })
+    </script>
+</html>

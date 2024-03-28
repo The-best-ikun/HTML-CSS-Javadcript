@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>组件切换</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="radio" name="change" value="1" @click="flag=true" checked="">1号组件
+            <br>
+            <input type="radio" name="change" value="2" @click="flag=false" >2号组件
+            <br>
+            <my-com1 v-if="flag"></my-com1>
+            <my-com2 v-if="flag==false"></my-com2>
+        </div>
+        <template id="temp1">
+            <p>{{title}}</p>
+        </template>
+        <template id="temp2">
+            <p>{{title}}</p>
+        </template>
+    </body>
+    <script>
+        Vue.component('my-com1',{
+            template:"#temp1",
+            data:function(){
+                return {title:"1号组件"}
+            }
+        })
+
+        Vue.component('my-com2',{
+            template:"#temp2",
+            data:function(){
+                return {title:"2号组件"}
+            }
+        })
+        new Vue({
+            el:"#app",
+            data:{
+                flag:true
+            }
+        })
+    </script>
+</html>

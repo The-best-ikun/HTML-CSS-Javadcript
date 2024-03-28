@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>父传子</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            {{msg}}
+            <mycom v-bind:parentmsg="msg"></mycom>
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                msg:'【父组件的data数据】'
+            },
+            components:{
+                mycom:{
+                    template:"<h3 @click='change'>子组件获取的父组件数据：{{parentmsg}}-----{{title}} </h3>",
+                    data:function(){
+                        return{
+                            title:"子组件数据标题",
+                            content:"子组件数据内容"
+                        }
+                    },
+                    // props的位置要注意，与data是同级的
+                    // 这个是传数据的关键
+                    // 父组件向子组件传递数据是，子组件不可更改父组件的数据，因为父组件数据一般是共享给多个子组件的
+                    props:["parentmsg"],
+                    methods:{
+                        change:function(){
+                            this.parentmsg="子组件方法修改了值"
+                        }
+                    }
+                },
+                
+                
+            }
+            
+        })
+    </script>
+</html>

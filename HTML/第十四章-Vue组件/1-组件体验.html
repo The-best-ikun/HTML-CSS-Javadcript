@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>组件体验</title>
+        <script src="vue.js"></script>
+
+        <!-- 组件可以理解成一堆HTML标签的CSS样式的集合 -->
+    </head>
+
+    <body>
+        <div id="app">
+            <!-- 用自定义的组件标签 -->
+            <myCom></myCom>
+        </div>
+
+    </body>
+    <script>
+        // 先创建
+        var com=Vue.extend({
+            template:"<h3>使用Vue.extend创建的组件</h3>"
+        })
+
+        // 后注册，前者是标签名，后者是创建的标签
+        Vue.component('myCom',com);
+        new Vue({
+            el:"#app"
+        })
+    </script>
+</html>

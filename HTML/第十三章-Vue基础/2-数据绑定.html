@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>数据绑定</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <div id="test">
+            <h1>{{msg}}</h1>
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#test",
+            data:{
+                msg:new Date()
+            },
+            // 挂载时触发
+            mounted:function(){
+                var vm=this;//这句话有必要吗？不应该默认调用就是this吗
+                // 函数调用格式别和jQuery搞混
+                this.timer=setInterval(function(){
+                    vm.msg= new Date();
+                },1000);
+            },
+
+            beforeDestory:function(){
+                if(this.timer){
+                    // 关闭定时器
+                    clearInterval(this.timer);
+                }
+            }
+        })
+    </script>
+</html>

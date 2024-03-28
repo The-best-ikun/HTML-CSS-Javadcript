@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>过滤器2</title>
+        <script src="vue.js"></script>
+        <!-- 全局过滤器，可以写在Vue实例外面 -->
+    </head>
+
+    <body>
+        <div id="app">
+            <h2>{{8 | number}}</h2>
+            <h2>{{18 | number}}</h2>
+            <h2>{{8.12345 | numberFormat(3)}}</h2>
+            <h2>{{18.1 | numberFormat(4)}}</h2>
+        </div>
+    </body>
+    <script>
+        Vue.filter('number',function(value){
+            return value<10?'0'+value:value;
+        })
+        Vue.filter('numberFormat',function(value,n){
+            return value.toFixed(n);
+        })
+        var app=new Vue({
+            el:"#app"
+        })
+    </script>
+</html>

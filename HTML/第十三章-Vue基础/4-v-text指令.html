@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>vue-text指令</title>
+        <script src="vue.js"></script>
+    </head>
+    <!-- 这个与vue的插值表达式差不多，只要记住这个只以文字形式进行解析 -->
+
+    <body>
+        <div id="app">
+            <p v-text="msg"></p>
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                msg:"你好"
+            }
+        })
+    </script>
+</html>

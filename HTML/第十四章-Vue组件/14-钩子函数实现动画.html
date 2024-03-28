@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>钩子函数实现动画</title>
+        <script src="vue.js"></script>
+
+        <!-- 这个好像流畅度最高 -->
+        <style>
+            .ball{
+                height: 300px;
+                width: 300px;
+                background-color: blueviolet;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="button" value="点我点我" @click="flag=!flag"/>
+            <transition
+                @before-enter="beforeEnter"
+                @enter="enter"
+                @after-enter="afterEnter">
+                <div class="ball" v-show="flag"></div>
+            </transition>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                flag:false
+            },
+            methods:{
+                beforeEnter(el){
+                    el.style.transform="translate(50px,50px)"
+                },
+                enter(el,done){
+                    el.offsetWidth
+                    el.style.transform="translate(150px,450px)"
+                    el.style.transition="all 1s ease"
+                    done()
+                },
+                afterEnter(){
+                    this.flag=false
+                }
+            }
+        })
+    </script>
+</html>

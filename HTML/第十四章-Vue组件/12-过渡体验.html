@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>过渡体验</title>
+        <script src="vue.js"></script>
+        <style>
+            .v-enter,.v-leave-to{
+                opacity: 0;
+                transform:translateX(300px);
+            }
+            .v-enter-active,.v-leave-active{
+                /* 一秒完成状态过渡，ease为先快后慢的过渡节奏 */
+                transition:all 1s ease;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="app">
+            <input type="button" value="显示/隐藏" @click="flag=!flag">
+            <transition>
+                <h3 v-if="flag">{{msg}}</h3>
+            </transition>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:'hello world',
+                flag:true
+            }
+        })
+    </script>
+</html>

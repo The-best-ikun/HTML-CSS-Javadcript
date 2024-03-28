@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>v-html</title>
+        <script src="vue.js"></script>
+    </head>
+    <!-- v-html可以解析文字中的html标签，插值表达式和v-text都不可以。 -->
+
+    <body>
+        <div id="app">
+            <p v-html="myButton"></p>
+        </div>
+
+    </body>
+    <script>
+        var vm=new Vue({
+            el:"#app",
+            data:{
+                myButton:'<input type="text" placeholder="请输入文字">'
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>警告框</title>
+        <!-- 警告框主要难点在于关闭方法，但是这个我还没想到具体的应用场景，以后具体问题具体分析吧 -->
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <div id="myAlert" class="alert alert-danger">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <p>用户名或密码不正确</p>
+            </div>
+            <!-- 这个也行 -->
+            <a href="#" class="close" data-dismiss="alert" data-target="#myAlert">
+                样式类关闭
+            </a>
+            <a href="#" class="btn btn-info" id="myClose">脚本关闭</a>
+        </div>
+
+    </body>
+    <script>
+        $(function(){
+
+            // 删除DOM的节点
+            $("#myClose").click(function(){
+                $(".alert").alert("close");
+
+            })
+        })
+    </script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>导航元素</title>
+        <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- 最好把jquery放在前面引用 -->
+        <script src="bootstrap-3.4.1-dist/dist/jquery.min.js"></script>
+        <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container" style="padding:30px 100px 10px">
+
+        <nav>
+
+            <!-- 卡片式导航 -->
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">JS</a></li>
+                <li><a href="#">jQuery</a></li>
+            </ul>
+            <br>
+            <br>
+
+            <!-- 按钮式导航 -->
+            <ul class="nav nav-pills">
+                <li class="active"><a href="#">主页</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">JS</a></li>
+                <li><a href="#">jQuery</a></li>
+                <li class="disable"><a href="#">响应式</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    </body>
+    <script>
+        $(function(){
+            // 点击状态变换
+            $(".nav-tabs li").click(function(){
+                $(".nav-tabs li").removeClass("active");
+                $(this).addClass("active");
+            })
+
+            $(".nav-pills li").click(function(){
+                $(".nav-pills li").removeClass("active");
+                $(this).addClass("active");
+            })
+        })
+    </script>
+</html>

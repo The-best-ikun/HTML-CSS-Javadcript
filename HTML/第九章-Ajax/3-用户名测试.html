@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>用户名测试</title>
+    </head>
+
+    <body>
+        <form action="" method="get" onsubmit="return false">
+            <input type="text" id="username" name="username">
+            <span id="display"></span>
+            <input type="submit" value="测试">
+        </form>
+
+    </body>
+    <script>
+        window.onload=function(){
+            var myBtn=document.getElementById("#btn");
+            myBtn.click=loadXMLDOC();
+            function loadXMLDOC(){
+                var xmlHttp;
+                if(window.XMLDocument){
+                    xmlHttp=new XMLHttpRequest
+                }else{
+                    xmlHttp=new ActiveXObject("Microsoft.XNLHTTP");
+                }
+                xmlHttp.onraedystatechange=function(){
+                    if(xmlHttp.readystate==4){
+                        if(xmlHttp.status==200){
+                            var message=xmlHttp.responseText;
+                            var flag=message.replace(/\s*/g,"");
+                            var display=document.getElementById('#display');
+                            if(flag=="true"){//这里的flag是字符串，不是布尔类型
+                                display.innerHTML="用户名已被占用";
+                                display.style.color="white";
+                                display.style.backgroundColor="red";
+                            }else{//这里的flag是字符串，不是布尔类型
+                                display.innerHTML="用户名可用";
+                                display.style.color="white";
+                                display.style.backgroundColor="green";
+                            }
+                        }
+                    }
+                }
+            }
+            xmlHttp.setRequestHeader("Content-Type",'application/x-www-form-urlencoded;charset=UTF-8');
+            xmlHttp.open("Get","AjaxServlet",true);
+            xmlHttp.send("name="+document.getElementById("username").value);//向服务器传输输入的用户名
+        }
+    </script>
+</html>

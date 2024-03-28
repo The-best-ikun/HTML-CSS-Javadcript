@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>组件当中的data和methods</title>
+        <script src="vue.js"></script>
+    </head>
+
+    <body>
+        <!--组件中的data和methods是独立与Vue实例的，如果全写在Vue实例里，很容易因为数据共享性导致数据混乱  -->
+        <div id="app">
+            <counter></counter>
+            <br>
+            <counter></counter>
+            <br>
+            <counter></counter>
+            <br>
+        </div>
+
+        <template id="temp">
+            <div>
+                <input type="button" value="加一" @click="increment">
+                <h3>{{count}}</h3>
+            </div>
+        </template>
+
+    </body>
+    <script>
+        Vue.component('counter',{
+            template:"#temp",
+            // data是要写成函数形式的，这个一定要注意
+            data:function(){
+                return {count:0}
+            },
+            methods:{
+                increment(){
+                    this.count++;
+                }
+            }
+        })
+        var vm=new Vue({
+            el:"#app"
+        })
+    </script>
+</html>
