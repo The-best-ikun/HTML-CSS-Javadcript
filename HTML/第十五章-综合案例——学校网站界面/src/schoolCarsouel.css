@@ -1,0 +1,22 @@
+/* 窗口在八百像素以上 */
+@media screen and ( min-width:800px){
+    #school-carousel{
+        width:100%;
+    }
+    
+}
+/* 八百像素以下 */
+@media screen and ( max-width:800px){
+    #school-carousel{
+        margin: 10px auto;
+        width:100%;
+    }
+}
+#school-carousel .carousel-inner .item img{
+    width: 100%;
+    height:100%;
+}
+.panel .learn-more {
+    color: aliceblue;
+    margin-left: 10px;
+}

@@ -1,0 +1,71 @@
+.logoNavTop{
+    background-color: rgb(44, 50, 50);
+    color: white;
+    height: 50px;
+    line-height:50px;
+    font-size:16px;
+}
+
+/* 这个没用过,当屏幕小于992像素的情况 */
+@media screen and (max-width:992px){
+    .schoolTop{
+        margin-left:0;
+    }
+}
+
+/* 当屏幕宽度大于 */
+
+@media screen and (min-width:992px){
+    .schoolTop{
+        margin-left:80px;
+    }
+}
+
+.logoNavTop div a{
+    color: white;
+    margin: 0 5px;
+}
+.logoNavTop .glyphicon{
+    margin: 0 5px;
+}
+
+
+/* 导航条下半部分CSS */
+/* .navbar{
+    background-color: transparent;
+} */
+#schoolLogoNavBottom{
+    margin-top: 50px;
+}
+.navbar-brand{
+    height: 70px;
+    margin-right: 100px;
+}
+.navbar-header button{
+    margin-top: 20px;
+}
+.navbar-brand img{
+    width:200px;
+}
+.dropdown-toggle{
+    background-color: transparent;
+    color: rgb(175, 53, 53);
+}
+/* 下拉菜单的收纳按钮 */
+#schoolNav li a{
+    /* 这个属性由于是id选择器，把下面的类选择器的a的样式给覆盖掉了，暂时没想到这么解决 */
+    /* height:70px; */
+    line-height:40px;
+    font-size:18px;
+}   
+.schoolMenu ul li a{
+    height:40px;
+}
+.navbar{
+    margin:0px;
+}
+#navbar-others{
+    float: right;
+    text-align: right;
+    margin-right: 20px;
+}

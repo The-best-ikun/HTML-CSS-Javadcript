@@ -1,0 +1,8 @@
+#schoolCopyright .container-fluid{
+    background-image: url("../images/slogan.png");
+    background-color: black;
+    color: aliceblue;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 20px;
+}

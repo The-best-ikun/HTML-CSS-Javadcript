@@ -1,0 +1,29 @@
+#schoolContent{
+    width: 90%;
+    margin: auto;
+}
+#schoolContent .lecture-report {
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid burlywood;
+    padding-left: 10px;
+}
+
+/* 两端对齐，中间留白 */
+.lecture-report p {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center; /* 垂直居中，如果需要的话 */
+
+}
+.report-place,.report-academy{
+    margin-right: 10px;
+}
+.lecture-report h4{
+    color: rgb(4, 121, 23);
+    font-weight: bold;
+}
+#schoolContent .others{
+    background: url("../images/长条白色背景.jpg");
+}
+
